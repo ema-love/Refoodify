@@ -1,0 +1,337 @@
+<style>
+@keyframes coolGrid {
+  0% { transform: scale(1) rotate(0deg); box-shadow: 0 8px 32px rgba(86,125,70,0.10); }
+  50% { transform: scale(1.04) rotate(2deg); box-shadow: 0 16px 48px rgba(86,125,70,0.18); }
+  100% { transform: scale(1) rotate(0deg); box-shadow: 0 8px 32px rgba(86,125,70,0.10); }
+}
+.content-grid {
+  animation: coolGrid 3.5s infinite cubic-bezier(.68,-0.55,.27,1.55);
+  opacity: 1 !important;
+}
+.standard-card {
+  animation: coolGrid 3.5s infinite alternate cubic-bezier(.68,-0.55,.27,1.55);
+  box-shadow: 0 8px 32px rgba(86,125,70,0.18), 0 0 0 6px #eaf4db;
+  opacity: 1 !important;
+}
+</style>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Education Hub — Refoodify</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="education-page">
+  <div class="promo-bar">
+    <a href="#" class="promo-btn">Refoodifying Life, one meal at a time.</a>
+    <button class="promo-close" aria-label="Close">&times;</button>
+  </div>
+  <header class="refoodify-header">
+    <div class="header-inner container">
+      <div class="logo-container">
+        <a href="/">
+          <img src="./assets/logo.png" alt="Refoodify Logo" class="site-logo-image">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="analyzer.html">Analyzer</a>
+        <a href="donations.html">Donations</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="tips.html">Tips</a>
+      </nav>
+      <div class="header-auth">
+        <a href="register.html" class="btn btn-outline">Sign Up</a>
+        <a href="login.html" class="btn btn-primary">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Title + Intro Block -->
+    <section class="education-header-block" style="background:#fff; padding:3rem 0 2rem; text-align:center;">
+      <h1 style="color:#557C22; font-size:2.8rem; font-weight:700; margin-bottom:0.5rem;">Education Hub</h1>
+      <div style="font-size:1.25rem; color:#333; margin-bottom:0.7rem;">Learn how to reduce food waste, cook creatively, and support sustainable communities.</div>
+      <hr style="border:0; height:2px; width:120px; background:#8DA966; margin:0.5rem auto 0; border-radius:2px;">
+    </section>
+
+    <!-- Featured Learning Paths -->
+    <section class="featured-learning-paths" style="display:flex; gap:2rem; justify-content:center; margin:2rem 0; flex-wrap:wrap;">
+      <div class="learning-card" style="background:linear-gradient(90deg,#BBD29B 0%,#fff 100%); border-radius:24px; box-shadow:0 4px 24px rgba(85,124,34,0.08); min-width:320px; max-width:360px; display:flex; flex-direction:column; align-items:center; padding:2rem;">
+        <div style="width:64px; height:64px; background:linear-gradient(135deg,#8DA966,#BBD29B); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; font-size:32px;">🍃</div>
+        <h3 style="color:#557C22; font-size:1.3rem; font-weight:600; margin-bottom:0.4rem;">Reduce Food Waste at Home</h3>
+        <p style="color:#333; font-size:1rem; margin-bottom:1.1rem;">Practical tips and guides to help you cut waste and save money every week.</p>
+        <a href="#" class="btn" style="background:#8DA966; color:#fff; border-radius:16px; padding:0.7rem 2rem; font-size:1.08rem;">Start Learning</a>
+      </div>
+      <div class="learning-card" style="background:linear-gradient(90deg,#BBD29B 0%,#fff 100%); border-radius:24px; box-shadow:0 4px 24px rgba(85,124,34,0.08); min-width:320px; max-width:360px; display:flex; flex-direction:column; align-items:center; padding:2rem;">
+        <div style="width:64px; height:64px; background:linear-gradient(135deg,#8DA966,#BBD29B); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; font-size:32px;">👨‍🍳</div>
+        <h3 style="color:#557C22; font-size:1.3rem; font-weight:600; margin-bottom:0.4rem;">Sustainable Cooking & Recipes</h3>
+        <p style="color:#333; font-size:1rem; margin-bottom:1.1rem;">Learn creative recipes and cooking methods that make the most of every ingredient.</p>
+        <a href="#" class="btn" style="background:#8DA966; color:#fff; border-radius:16px; padding:0.7rem 2rem; font-size:1.08rem;">Start Learning</a>
+      </div>
+      <div class="learning-card" style="background:linear-gradient(90deg,#BBD29B 0%,#fff 100%); border-radius:24px; box-shadow:0 4px 24px rgba(85,124,34,0.08); min-width:320px; max-width:360px; display:flex; flex-direction:column; align-items:center; padding:2rem;">
+        <div style="width:64px; height:64px; background:linear-gradient(135deg,#8DA966,#BBD29B); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; font-size:32px;">👥</div>
+        <h3 style="color:#557C22; font-size:1.3rem; font-weight:600; margin-bottom:0.4rem;">Community Food Management</h3>
+        <p style="color:#333; font-size:1rem; margin-bottom:1.1rem;">Discover how communities work together to share, store, and distribute food sustainably.</p>
+        <a href="#" class="btn" style="background:#8DA966; color:#fff; border-radius:16px; padding:0.7rem 2rem; font-size:1.08rem;">Start Learning</a>
+      </div>
+    </section>
+
+    <!-- Search + Category Filters -->
+    <section class="search-filter-bar" style="max-width:900px; margin:2rem auto; display:flex; gap:1.2rem; align-items:center; flex-wrap:wrap; justify-content:center;">
+      <input type="text" placeholder="Search tips, guides, videos…" style="flex:2; padding:0.7rem 1.2rem; border-radius:18px; border:2px solid #8DA966; font-size:1.08rem;">
+      <button style="background:#8DA966; color:#fff; border-radius:14px; padding:0.5rem 1.2rem; font-size:0.98rem; border:none;">Waste Reduction</button>
+      <button style="background:#8DA966; color:#fff; border-radius:14px; padding:0.5rem 1.2rem; font-size:0.98rem; border:none;">Healthy Recipes</button>
+      <button style="background:#8DA966; color:#fff; border-radius:14px; padding:0.5rem 1.2rem; font-size:0.98rem; border:none;">Storage Tips</button>
+      <button style="background:#8DA966; color:#fff; border-radius:14px; padding:0.5rem 1.2rem; font-size:0.98rem; border:none;">Donation Safety</button>
+      <button style="background:#8DA966; color:#fff; border-radius:14px; padding:0.5rem 1.2rem; font-size:0.98rem; border:none;">Sustainability</button>
+      <button style="background:#8DA966; color:#fff; border-radius:14px; padding:0.5rem 1.2rem; font-size:0.98rem; border:none;">Beginner Guides</button>
+    </section>
+
+    <!-- Learning Content Grid -->
+    <section class="content-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2rem; padding:2rem 0;">
+      <div class="edu-card" style="background:#fff; border:1.5px solid #BBD29B; border-radius:20px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem; display:flex; flex-direction:column;">
+        <div style="width:100%; height:120px; background:linear-gradient(135deg,#BBD29B,#8DA966); border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:0.7rem; font-size:48px; color:#fff;">📖</div>
+        <span style="background:#8DA966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem; margin-bottom:0.5rem;">Mini Guide</span>
+        <h4 style="color:#557C22; font-size:1.1rem; font-weight:600; margin-bottom:0.3rem;">Fridge Mastery</h4>
+        <p style="color:#333; font-size:0.98rem; margin-bottom:0.7rem;">How to store dairy, veggies, and baked goods for maximum life.</p>
+        <a href="#" class="btn btn-small" style="background:#8DA966; color:#fff; border-radius:16px; padding:0.3rem 1rem; font-size:0.93rem;">Download</a>
+      </div>
+      <div class="edu-card" style="background:#fff; border:1.5px solid #BBD29B; border-radius:20px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem; display:flex; flex-direction:column;">
+        <div style="width:100%; height:120px; background:linear-gradient(135deg,#BBD29B,#8DA966); border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:0.7rem; font-size:48px; color:#fff;">📝</div>
+        <span style="background:#8DA966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem; margin-bottom:0.5rem;">Article</span>
+        <h4 style="color:#557C22; font-size:1.1rem; font-weight:600; margin-bottom:0.3rem;">Batch Cooking</h4>
+        <p style="color:#333; font-size:0.98rem; margin-bottom:0.7rem;">Plan meals and freeze smartly to avoid waste.</p>
+        <a href="#" class="btn btn-small" style="background:#8DA966; color:#fff; border-radius:16px; padding:0.3rem 1rem; font-size:0.93rem;">View</a>
+      </div>
+      <div class="edu-card" style="background:#fff; border:1.5px solid #BBD29B; border-radius:20px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem; display:flex; flex-direction:column;">
+        <div style="width:100%; height:120px; background:linear-gradient(135deg,#BBD29B,#8DA966); border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:0.7rem; font-size:48px; color:#fff;">🎓</div>
+        <span style="background:#8DA966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem; margin-bottom:0.5rem;">Tutorial</span>
+        <h4 style="color:#557C22; font-size:1.1rem; font-weight:600; margin-bottom:0.3rem;">Zero-Waste Recipes</h4>
+        <p style="color:#333; font-size:0.98rem; margin-bottom:0.7rem;">Turn peels and stems into delicious stock and sides.</p>
+        <a href="#" class="btn btn-small" style="background:#8DA966; color:#fff; border-radius:16px; padding:0.3rem 1rem; font-size:0.93rem;">View</a>
+      </div>
+    </section>
+
+    <!-- Popular Tutorials Row -->
+    <section class="popular-tutorials-row" style="overflow-x:auto; white-space:nowrap; padding:2rem 0 1.5rem;">
+      <div class="tutorials-inner" style="display:inline-flex; gap:2rem;">
+        <div class="tutorial-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); min-width:260px; max-width:320px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+          <img src="assets/veggie-thumb.jpg" alt="Store Veggies" style="width:100px; border-radius:12px; margin-bottom:0.7rem;">
+          <div style="color:#557C22; font-size:1rem; font-weight:600; margin-bottom:0.3rem;">How to Store Veggies to Last 50% Longer</div>
+          <span style="color:#557C22; font-size:1.2rem; margin-top:0.3rem;">&#128278;</span>
+        </div>
+        <div class="tutorial-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); min-width:260px; max-width:320px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+          <img src="assets/rice-thumb.jpg" alt="Leftover Rice" style="width:100px; border-radius:12px; margin-bottom:0.7rem;">
+          <div style="color:#557C22; font-size:1rem; font-weight:600; margin-bottom:0.3rem;">Creative Ways to Use Leftover Rice</div>
+          <span style="color:#557C22; font-size:1.2rem; margin-top:0.3rem;">&#128278;</span>
+        </div>
+        <div class="tutorial-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); min-width:260px; max-width:320px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+          <img src="assets/safety-thumb.jpg" alt="Food Safety" style="width:100px; border-radius:12px; margin-bottom:0.7rem;">
+          <div style="color:#557C22; font-size:1rem; font-weight:600; margin-bottom:0.3rem;">Food Safety for Donors</div>
+          <span style="color:#557C22; font-size:1.2rem; margin-top:0.3rem;">&#128278;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Modules Section -->
+    <section class="interactive-modules-block" style="max-width:900px; margin:2rem auto; display:flex; gap:2rem; flex-wrap:wrap;">
+      <div class="module-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); flex:1; min-width:260px; padding:1.5rem; text-align:center;">
+        <img src="assets/expiration-icon.png" alt="Expiration Decoder" style="width:48px; margin-bottom:0.7rem;">
+        <h4 style="color:#557C22; font-size:1.08rem; font-weight:600; margin-bottom:0.5rem;">Expiration Date Decoder</h4>
+        <p style="color:#333; font-size:0.98rem; margin-bottom:0.7rem;">Learn the difference between best before, use by, and sell by dates.</p>
+      </div>
+      <div class="module-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); flex:1; min-width:260px; padding:1.5rem; text-align:center;">
+        <img src="assets/storage-guide-icon.png" alt="Storage Guide" style="width:48px; margin-bottom:0.7rem;">
+        <h4 style="color:#557C22; font-size:1.08rem; font-weight:600; margin-bottom:0.5rem;">Food Storage Guide</h4>
+        <p style="color:#333; font-size:0.98rem; margin-bottom:0.7rem;">Drag and drop foods to learn proper fridge and pantry storage.</p>
+      </div>
+      <div class="module-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); flex:1; min-width:260px; padding:1.5rem; text-align:center;">
+        <img src="assets/leftover-gen-icon.png" alt="Leftover Generator" style="width:48px; margin-bottom:0.7rem;">
+        <h4 style="color:#557C22; font-size:1.08rem; font-weight:600; margin-bottom:0.5rem;">Leftover Recipe Generator</h4>
+        <p style="color:#333; font-size:0.98rem; margin-bottom:0.7rem;">Enter ingredients to get creative recipe ideas for leftovers.</p>
+      </div>
+    </section>
+
+    <!-- Video Library Section -->
+    <section class="video-library-block" style="max-width:1100px; margin:2rem auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2rem;">
+      <div class="video-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem;">
+        <img src="assets/video1-thumb.jpg" alt="Composting" style="width:100%; border-radius:14px; object-fit:cover; height:160px; margin-bottom:0.7rem;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.5rem;">
+          <span style="color:#557C22; font-size:1.08rem; font-weight:600;">How Composting Works</span>
+          <span style="background:#8DA966; color:#fff; border-radius:10px; padding:0.2rem 0.7rem; font-size:0.85rem;">6:12</span>
+        </div>
+        <p style="color:#333; font-size:0.98rem; margin-bottom:0.7rem;">A visual guide to composting at home and in communities.</p>
+      </div>
+      <div class="video-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem;">
+        <img src="assets/video2-thumb.jpg" alt="Food Waste Africa" style="width:100%; border-radius:14px; object-fit:cover; height:160px; margin-bottom:0.7rem;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.5rem;">
+          <span style="color:#557C22; font-size:1.08rem; font-weight:600;">Understanding Food Waste in Africa</span>
+          <span style="background:#8DA966; color:#fff; border-radius:10px; padding:0.2rem 0.7rem; font-size:0.85rem;">8:03</span>
+        </div>
+        <p style="color:#333; font-size:0.98rem; margin-bottom:0.7rem;">Explore the challenges and solutions for food waste across the continent.</p>
+      </div>
+      <div class="video-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem;">
+        <img src="assets/video3-thumb.jpg" alt="Meals with Scraps" style="width:100%; border-radius:14px; object-fit:cover; height:160px; margin-bottom:0.7rem;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.5rem;">
+          <span style="color:#557C22; font-size:1.08rem; font-weight:600;">Easy Meals with Food Scraps</span>
+          <span style="background:#8DA966; color:#fff; border-radius:10px; padding:0.2rem 0.7rem; font-size:0.85rem;">4:47</span>
+        </div>
+        <p style="color:#333; font-size:0.98rem; margin-bottom:0.7rem;">Quick recipes to turn scraps into delicious meals.</p>
+      </div>
+    </section>
+
+    <!-- Quick Tips Carousel -->
+    <section class="quick-tips-carousel" style="overflow-x:auto; white-space:nowrap; padding:2rem 0 1.5rem;">
+      <div class="tips-inner" style="display:inline-flex; gap:1.2rem;">
+        <div class="tip-card" style="background:#BBD29B; border-radius:14px; min-width:180px; max-width:220px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+          <img src="assets/leaf-icon.png" alt="Tip" style="width:32px; margin-bottom:0.5rem;">
+          <div style="color:#557C22; font-size:0.98rem; font-weight:500; text-align:center;">Freeze leftover herbs in olive oil cubes.</div>
+        </div>
+        <div class="tip-card" style="background:#BBD29B; border-radius:14px; min-width:180px; max-width:220px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+          <img src="assets/leaf-icon.png" alt="Tip" style="width:32px; margin-bottom:0.5rem;">
+          <div style="color:#557C22; font-size:0.98rem; font-weight:500; text-align:center;">Store tomatoes at room temperature for more flavor.</div>
+        </div>
+        <div class="tip-card" style="background:#BBD29B; border-radius:14px; min-width:180px; max-width:220px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+          <img src="assets/leaf-icon.png" alt="Tip" style="width:32px; margin-bottom:0.5rem;">
+          <div style="color:#557C22; font-size:0.98rem; font-weight:500; text-align:center;">Use vegetable scraps to make broth.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="downloads-block" style="max-width:900px; margin:2rem auto; display:flex; gap:2rem; flex-wrap:wrap;">
+      <div class="download-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); flex:1; min-width:220px; padding:1.2rem; display:flex; align-items:center; gap:1rem;">
+        <img src="assets/pdf-icon.png" alt="PDF" style="width:32px;">
+        <div>
+          <div style="color:#557C22; font-size:1.08rem; font-weight:600;">Food Waste Reduction Checklist</div>
+          <a href="#" class="btn btn-small" style="background:#557C22; color:#fff; border-radius:14px; padding:0.3rem 1rem; font-size:0.93rem;">Download</a>
+        </div>
+      </div>
+      <div class="download-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); flex:1; min-width:220px; padding:1.2rem; display:flex; align-items:center; gap:1rem;">
+        <img src="assets/pdf-icon.png" alt="PDF" style="width:32px;">
+        <div>
+          <div style="color:#557C22; font-size:1.08rem; font-weight:600;">Weekly Meal Planner Template</div>
+          <a href="#" class="btn btn-small" style="background:#557C22; color:#fff; border-radius:14px; padding:0.3rem 1rem; font-size:0.93rem;">Download</a>
+        </div>
+      </div>
+      <div class="download-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); flex:1; min-width:220px; padding:1.2rem; display:flex; align-items:center; gap:1rem;">
+        <img src="assets/pdf-icon.png" alt="PDF" style="width:32px;">
+        <div>
+          <div style="color:#557C22; font-size:1.08rem; font-weight:600;">Home Composting Guide</div>
+          <a href="#" class="btn btn-small" style="background:#557C22; color:#fff; border-radius:14px; padding:0.3rem 1rem; font-size:0.93rem;">Download</a>
+        </div>
+      </div>
+      <div class="download-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); flex:1; min-width:220px; padding:1.2rem; display:flex; align-items:center; gap:1rem;">
+        <img src="assets/pdf-icon.png" alt="PDF" style="width:32px;">
+        <div>
+          <div style="color:#557C22; font-size:1.08rem; font-weight:600;">Food Donation Safety Sheet</div>
+          <a href="#" class="btn btn-small" style="background:#557C22; color:#fff; border-radius:14px; padding:0.3rem 1rem; font-size:0.93rem;">Download</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quizzes & Challenges -->
+    <section class="quizzes-challenges-block" style="background:#BBD29B; border-radius:18px; max-width:700px; margin:2rem auto; padding:2rem; text-align:center;">
+      <img src="assets/quiz-icon.png" alt="Quiz" style="width:48px; margin-bottom:0.7rem;">
+      <h3 style="color:#557C22; font-size:1.18rem; font-weight:600; margin-bottom:0.7rem;">Test your knowledge!</h3>
+      <a href="#" class="btn" style="background:#557C22; color:#fff; border-radius:18px; padding:0.7rem 2.2rem; font-size:1.08rem; font-weight:500;">Take the Quiz</a>
+    </section>
+
+    <!-- Community Learning Stories -->
+    <section class="community-learning-stories-block" style="max-width:900px; margin:2rem auto; display:flex; gap:2rem; flex-wrap:wrap;">
+      <div class="story-card" style="background:#8DA966; border-radius:14px; flex:1; min-width:220px; padding:1.2rem; display:flex; align-items:center; gap:1rem; color:#fff;">
+        <img src="assets/profile1.jpg" alt="User" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+        <div>
+          <div style="font-size:1.08rem; font-weight:600;">Amina, Kigali</div>
+          <div style="font-size:0.98rem;">“I learned how to keep veggies fresh for weeks!”</div>
+        </div>
+      </div>
+      <div class="story-card" style="background:#8DA966; border-radius:14px; flex:1; min-width:220px; padding:1.2rem; display:flex; align-items:center; gap:1rem; color:#fff;">
+        <img src="assets/profile2.jpg" alt="User" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+        <div>
+          <div style="font-size:1.08rem; font-weight:600;">Samuel, Nairobi</div>
+          <div style="font-size:0.98rem;">“Batch cooking changed my family’s habits.”</div>
+        </div>
+      </div>
+      <div class="story-card" style="background:#8DA966; border-radius:14px; flex:1; min-width:220px; padding:1.2rem; display:flex; align-items:center; gap:1rem; color:#fff;">
+        <img src="assets/profile3.jpg" alt="User" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+        <div>
+          <div style="font-size:1.08rem; font-weight:600;">Fatima, Lagos</div>
+          <div style="font-size:0.98rem;">“I use scraps for broth and save money!”</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Block -->
+    <section class="cta-footer-block" style="background:#8DA966; color:#fff; text-align:center; padding:2.5rem 0; margin-top:2rem; border-radius:18px;">
+      <div style="font-size:1.25rem; font-weight:500; margin-bottom:1.1rem;">Ready to learn more? Join the community and help reduce food waste across Africa.</div>
+      <a href="register.html" class="btn" style="background:#fff; color:#557C22; border-radius:18px; padding:0.8rem 2.2rem; font-size:1.08rem; font-weight:600;">Join the Learning Community</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-brand">
+          <div class="brand-row">
+            <img src="./assets/logo.png" alt="Refoodify logo" style="height:34px; width:auto;">
+            <span class="brand-name">Refoodify</span>
+          </div>
+          <p class="brand-description">Turning leftovers into solutions. Join our community in reducing food waste.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="analyzer.html">Analyzer</a></li>
+            <li><a href="surplus-donations.html">Donations</a></li>
+            <li><a href="tracker.html">Tracker</a></li>
+            <li><a href="tips.html">Tips</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="education.html">Education Hub</a></li>
+            <li><a href="impact-stories.html">Impact Stories</a></li>
+            <li><a href="impact-tracker.html">Impact Tracker</a></li>
+            <li><a href="surplus-donations.html">Surplus Donation System</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="contact-list">
+            <li>
+              <i class='bx bx-envelope contact-icon' aria-hidden="true"></i>
+              <a href="mailto:refoodify5@gmail.com">refoodify5@gmail.com</a>
+            </li>
+            <li>
+              <i class='bx bx-phone contact-icon' aria-hidden="true"></i>
+              <a href="tel:+250795611830">+250 795611830</a>
+            </li>
+            <li>
+              <i class='bx  bxs-location-check contact-icon-alt'></i>
+              Across the African continent
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <p>© 2025 Refoodify. All rights reserved. Refoodifying Life, one meal at a time.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

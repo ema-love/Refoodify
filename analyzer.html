@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingredient Analyzer • Refoodify</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="promo-bar">
+    <a href="#" class="promo-btn">Refoodifying Life, one meal at a time.</a>
+    <button class="promo-close" aria-label="Close">&times;</button>
+  </div>
+  <header class="refoodify-header">
+    <div class="header-inner container">
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="./assets/logo.png" alt="Refoodify Logo" class="site-logo-image">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="analyzer.html">Analyzer</a>
+        <a href="donations.html">Donations</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="tips.html">Tips</a>
+      </nav>
+      <div class="header-auth">
+        <a href="register.html" class="btn btn-outline">Sign Up</a>
+        <a href="login.html" class="btn btn-primary">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="analyzer-page">
+    <!-- Spoonacular API powers recipe suggestions below. Enter your API key in script.js -->
+    <section class="analyzer-layout container">
+      <div class="an-card">
+        <div class="an-card-header">
+          <h1 class="an-title">Smart Ingredient Analyzer</h1>
+          <p class="an-subtitle">Add ingredients or upload a photo to analyze freshness.</p>
+        </div>
+        <form class="an-input-row" id="anForm" autocomplete="off">
+          <div class="an-input-group">
+            <span class="search-icon"><i class='bx bx-search'></i></span>
+            <input class="an-input" id="anQuery" type="text" placeholder="Type ingredients (comma or space separated)">
+          </div>
+          <div class="an-actions">
+            <button class="an-btn-primary" type="submit">Analyze</button>
+            <button class="an-btn-ghost" type="button" id="anScan"><i class='bx bx-camera' aria-hidden="true"></i> Scan / Upload</button>
+          </div>
+        </form>
+
+        <div class="an-chips" id="anChips"></div>
+
+        <div class="an-insights">
+          <div class="an-risk">
+            <div class="risk-ring" id="riskRing" style="--risk: 0"></div>
+            <div class="risk-label" id="riskLabel">Waste Risk Score: 0%</div>
+          </div>
+          <div class="an-key">
+            <h3 class="section-subheading">Key Insights</h3>
+            <ul class="key-list" id="keyList"></ul>
+          </div>
+        </div>
+
+        <div class="an-recipes">
+          <h3 class="section-heading">What You Can Make Today</h3>
+          <div class="recipes-grid" id="recipesGrid"></div>
+        </div>
+      </div>
+
+      <aside class="an-sidebar">
+        <div class="an-filters" id="anFilters">
+          <button class="filter-btn active" data-cat="">All</button>
+          <button class="filter-btn" data-cat="Vegetables">Vegetables</button>
+          <button class="filter-btn" data-cat="Fruits">Fruits</button>
+          <button class="filter-btn" data-cat="Dairy">Dairy</button>
+          <button class="filter-btn" data-cat="Pantry">Pantry</button>
+        </div>
+        <div class="an-tip">
+          <div class="tip-moment-icon">🌿</div>
+          <div class="tip-moment-text" id="anMoment">Store herbs in a jar with water to keep them fresh longer.</div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-brand">
+          <div class="brand-row">
+            <img src="./assets/logo.png" alt="Refoodify Logo" style="height:32px; width:auto;">
+            <span class="brand-name">Refoodify</span>
+          </div>
+          <p class="brand-description">Turning leftovers into solutions. Join our community in reducing food waste.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Analyzer</a></li>
+            <li><a href="#">Donations</a></li>
+            <li><a href="tracker.html">Tracker</a></li>
+            <li><a href="tips.html">Tips</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="#">Education Hub</a></li>
+            <li><a href="#">Impact Stories</a></li>
+            <li><a href="#">Impact Tracker</a></li>
+            <li><a href="#">Surplus Donation System</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="contact-list">
+            <li>
+              <i class='bx bx-envelope contact-icon' aria-hidden="true"></i>
+              <a href="mailto:refoodify5@gmail.com">refoodify5@gmail.com</a>
+            </li>
+            <li>
+              <i class='bx bx-phone contact-icon' aria-hidden="true"></i>
+              <a href="tel:+250795611830">+250 795611830</a>
+            </li>
+            <li>
+              <i class='bx  bxs-location-check contact-icon-alt'></i>
+              Across the African continent
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <p>© 2025 Refoodify. All rights reserved. Refoodifying Life, one meal at a time.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

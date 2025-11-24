@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved • Refoodify</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="promo-bar">
+    <a href="#" class="promo-btn">Refoodifying Life, one meal at a time.</a>
+    <button class="promo-close" aria-label="Close">&times;</button>
+  </div>
+  <header class="refoodify-header">
+    <div class="header-inner container">
+      <div class="logo-container">
+        <a href="/">
+          <img src="./assets/logo.png" alt="Refoodify Logo" class="site-logo-image">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="analyzer.html">Analyzer</a>
+        <a href="donations.html">Donations</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="tips.html">Tips</a>
+      </nav>
+      <div class="header-auth">
+        <a href="register.html" class="btn btn-outline">Sign Up</a>
+        <a href="login.html" class="btn btn-primary">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Category Tabs -->
+  <nav class="saved-category-tabs" style="display:flex; gap:1rem; justify-content:center; margin:2rem 0; flex-wrap:wrap;">
+    <button style="background:#557C22; color:#fff; border-radius:18px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:600; border:none;">All</button>
+    <button style="background:#BBD29B; color:#557C22; border-radius:18px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:600; border:2px solid #8DA966;">Recipes</button>
+    <button style="background:#fff; color:#557C22; border-radius:18px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:600; border:2px solid #8DA966;">Tips</button>
+    <button style="background:#fff; color:#557C22; border-radius:18px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:600; border:2px solid #8DA966;">Articles</button>
+    <button style="background:#fff; color:#557C22; border-radius:18px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:600; border:2px solid #8DA966;">Videos</button>
+    <button style="background:#fff; color:#557C22; border-radius:18px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:600; border:2px solid #8DA966;">Resources</button>
+    <button style="background:#fff; color:#557C22; border-radius:18px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:600; border:2px solid #8DA966;">Donation Drafts</button>
+    <button style="background:#fff; color:#557C22; border-radius:18px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:600; border:2px solid #8DA966;">Impact Insights</button>
+  </nav>
+
+  <!-- Search + Sort Bar -->
+  <section class="saved-search-sort-bar" style="max-width:900px; margin:2rem auto; display:flex; gap:1.2rem; align-items:center; flex-wrap:wrap; justify-content:center;">
+    <input type="text" placeholder="Search your saved items…" style="flex:2; padding:0.7rem 1.2rem; border-radius:18px; border:2px solid #8DA966; font-size:1.08rem; box-shadow:0 2px 12px rgba(85,124,34,0.07);">
+    <select style="padding:0.7rem 1.2rem; border-radius:14px; border:2px solid #8DA966; font-size:1rem;">
+      <option>Recently Added</option>
+      <option>Most Viewed</option>
+      <option>A–Z</option>
+      <option>Category</option>
+    </select>
+  </section>
+
+  <!-- Saved Items Grid -->
+  <section class="saved-items-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2rem; padding:2rem 0;">
+    <!-- Example Saved Recipe Card -->
+    <div class="saved-card" style="background:#fff; border:1.5px solid #BBD29B; border-radius:20px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem; display:flex; flex-direction:column; position:relative;">
+      <div style="width:100%; height:120px; background:linear-gradient(135deg,#BBD29B,#8DA966); border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:0.7rem; font-size:40px;">🥗</div>
+      <span style="background:#8DA966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem; margin-bottom:0.5rem;">Recipe</span>
+      <h4 style="color:#557C22; font-size:1.1rem; font-weight:600; margin-bottom:0.3rem;">Creative Leftover Vegetable Stir-Fry</h4>
+      <p style="color:#333; font-size:0.98rem; margin-bottom:0.7rem;">A delicious way to use up veggies and reduce waste.</p>
+      <div style="font-size:0.9rem; color:#6A8A4A; margin-bottom:0.5rem;">Saved: Nov 2025</div>
+      <button class="btn btn-small" style="background:#8DA966; color:#fff; border-radius:14px; padding:0.3rem 1rem; font-size:0.93rem;">View Recipe</button>
+      <span style="position:absolute; top:1rem; right:1rem; color:#557C22; font-size:1.3rem;">&#128278;</span>
+    </div>
+    <!-- Example Saved Tip Card -->
+    <div class="saved-card" style="background:#fff; border:1.5px solid #BBD29B; border-radius:20px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem; display:flex; flex-direction:column; position:relative;">
+      <img src="assets/tip-icon.png" alt="Tip" style="width:48px; margin-bottom:0.7rem; align-self:center;">
+      <span style="background:#8DA966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem; margin-bottom:0.5rem;">Tip</span>
+      <h4 style="color:#557C22; font-size:1.1rem; font-weight:600; margin-bottom:0.3rem;">Store bananas separately to slow ripening.</h4>
+      <div style="font-size:0.9rem; color:#6A8A4A; margin-bottom:0.5rem;">Saved: Nov 2025</div>
+      <span style="position:absolute; top:1rem; right:1rem; color:#557C22; font-size:1.3rem;">&#128278;</span>
+    </div>
+    <!-- Example Saved Video Card -->
+    <div class="saved-card" style="background:#fff; border:1.5px solid #BBD29B; border-radius:20px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem; display:flex; flex-direction:column; position:relative;">
+      <div style="width:100%; height:120px; background:linear-gradient(135deg,#8DA966,#557C22); border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:0.7rem; font-size:40px;">🎥</div>
+      <span style="background:#8DA966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem; margin-bottom:0.5rem;">Video</span>
+      <h4 style="color:#557C22; font-size:1.1rem; font-weight:600; margin-bottom:0.3rem;">Reducing Food Waste 101</h4>
+      <div style="font-size:0.9rem; color:#6A8A4A; margin-bottom:0.5rem;">Duration: 3:42</div>
+      <span style="position:absolute; top:1rem; right:1rem; color:#557C22; font-size:1.3rem;">&#128278;</span>
+    </div>
+    <!-- Example Saved Article Card -->
+    <div class="saved-card" style="background:#fff; border:1.5px solid #BBD29B; border-radius:20px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem; display:flex; flex-direction:column; position:relative;">
+      <span style="background:#8DA966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem; margin-bottom:0.5rem; align-self:flex-start;">Article</span>
+      <h4 style="color:#557C22; font-size:1.1rem; font-weight:600; margin-bottom:0.3rem;">The Power of Surplus Donations in African Communities</h4>
+      <p style="color:#333; font-size:0.98rem; margin-bottom:0.7rem;">How local efforts are transforming food security.</p>
+      <div style="font-size:0.9rem; color:#6A8A4A; margin-bottom:0.5rem;">Saved: Nov 2025</div>
+      <span style="position:absolute; top:1rem; right:1rem; color:#557C22; font-size:1.3rem;">&#128278;</span>
+    </div>
+    <!-- Example Saved Donation Draft Card -->
+    <div class="saved-card" style="background:#fff; border:1.5px solid #BBD29B; border-radius:20px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem; display:flex; flex-direction:column; position:relative;">
+      <img src="assets/clipboard-icon.png" alt="Donation Draft" style="width:48px; margin-bottom:0.7rem; align-self:center;">
+      <span style="background:#8DA966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem; margin-bottom:0.5rem;">Donation Draft</span>
+      <h4 style="color:#557C22; font-size:1.1rem; font-weight:600; margin-bottom:0.3rem;">Draft Donation – 3 Items Ready</h4>
+      <button class="btn btn-small" style="background:#8DA966; color:#fff; border-radius:14px; padding:0.3rem 1rem; font-size:0.93rem;">Continue</button>
+      <span style="position:absolute; top:1rem; right:1rem; color:#557C22; font-size:1.3rem;">&#128278;</span>
+    </div>
+    <!-- Example Saved Impact Report Card -->
+    <div class="saved-card" style="background:#fff; border:1.5px solid #BBD29B; border-radius:20px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem; display:flex; flex-direction:column; position:relative;">
+      <img src="assets/pie-chart-thumb.png" alt="Impact Report" style="width:100px; margin-bottom:0.7rem; align-self:center;">
+      <span style="background:#8DA966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem; margin-bottom:0.5rem;">Impact Report</span>
+      <h4 style="color:#557C22; font-size:1.1rem; font-weight:600; margin-bottom:0.3rem;">Your Monthly Impact Summary – September</h4>
+      <button class="btn btn-small" style="background:#8DA966; color:#fff; border-radius:14px; padding:0.3rem 1rem; font-size:0.93rem;">View Report</button>
+      <span style="position:absolute; top:1rem; right:1rem; color:#557C22; font-size:1.3rem;">&#128278;</span>
+    </div>
+  </section>
+
+  <!-- Empty State UI -->
+  <section class="saved-empty-state" style="display:none; text-align:center; padding:3rem 0;">
+    <img src="assets/empty-bookmark.png" alt="Empty" style="width:80px; margin-bottom:1.2rem;">
+    <h3 style="color:#557C22; font-size:1.3rem; font-weight:600; margin-bottom:0.5rem;">Nothing saved yet. Start exploring and keep your favorites here.</h3>
+    <a class="btn" href="index.html" style="background:#557C22; color:#fff; border-radius:18px; padding:0.8rem 2.2rem; font-size:1.08rem; font-weight:600;">Explore Content</a>
+  </section>
+
+  <!-- Recommended for You -->
+  <section class="recommended-for-you-row" style="overflow-x:auto; white-space:nowrap; padding:2rem 0 1.5rem;">
+    <h3 style="color:#557C22; font-size:1.18rem; font-weight:600; margin-bottom:1rem;">You Might Also Like</h3>
+    <div class="recommended-inner" style="display:inline-flex; gap:2rem;">
+      <div class="recommended-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); min-width:220px; max-width:260px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+        <div style="width:60px; height:60px; background:linear-gradient(135deg,#BBD29B,#8DA966); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:0.7rem; font-size:28px;">📚</div>
+        <div style="color:#557C22; font-size:1rem; font-weight:600; margin-bottom:0.3rem;">Food Waste Reduction Guide</div>
+      </div>
+      <div class="recommended-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); min-width:220px; max-width:260px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+        <div style="width:60px; height:60px; background:linear-gradient(135deg,#BBD29B,#8DA966); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:0.7rem; font-size:28px;">🥘</div>
+        <div style="color:#557C22; font-size:1rem; font-weight:600; margin-bottom:0.3rem;">Creative Leftover Recipes</div>
+      </div>
+      <div class="recommended-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); min-width:220px; max-width:260px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+        <div style="width:60px; height:60px; background:linear-gradient(135deg,#8DA966,#557C22); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:0.7rem; font-size:28px;">📹</div>
+        <div style="color:#557C22; font-size:1rem; font-weight:600; margin-bottom:0.3rem;">Reducing Food Waste 101</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer CTA Block -->
+  <section class="cta-footer-block" style="background:#8DA966; color:#fff; text-align:center; padding:2.5rem 0; margin-top:2rem; border-radius:18px;">
+    <div style="font-size:1.18rem; font-weight:500; margin-bottom:1.1rem;">Keep exploring and saving your favorite recipes, tips, and guides!</div>
+    <a href="index.html" class="btn" style="background:#fff; color:#557C22; border-radius:18px; padding:0.8rem 2.2rem; font-size:1.08rem; font-weight:600;">Discover More Recipes</a>
+  </section>
+
+  <main class="saved-page">
+    <section class="container saved-section">
+      <div class="saved-toolbar">
+        <div class="saved-filters">
+          <select class="saved-select" id="savedCat">
+            <option value="">All</option>
+            <option value="Meals">Meals</option>
+            <option value="Recipes">Recipes</option>
+            <option value="Donations">Donations</option>
+          </select>
+          <select class="saved-select" id="savedSort">
+            <option value="date">Date saved</option>
+            <option value="popularity">Popularity</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="saved-grid" id="savedGrid"></div>
+      <div class="saved-empty" id="savedEmpty" style="display:none;">
+        <div class="empty-illus">📦</div>
+        <h3 class="empty-title">You haven’t saved anything yet</h3>
+        <p class="empty-desc">Explore items to save and they’ll appear here.</p>
+        <a class="btn btn-primary" href="index.html">Explore items to save</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-brand">
+          <div class="brand-row">
+            <img src="./assets/logo.png" alt="Refoodify Logo" style="height:32px; width:auto;">
+            <span class="brand-name">Refoodify</span>
+          </div>
+          <p class="brand-description">Turning leftovers into solutions. Join our community in reducing food waste.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="analyzer.html">Analyzer</a></li>
+            <li><a href="donations.html">Donations</a></li>
+            <li><a href="tracker.html">Tracker</a></li>
+            <li><a href="tips.html">Tips</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="#">Education Hub</a></li>
+            <li><a href="#">Impact Stories</a></li>
+            <li><a href="#">Impact Tracker</a></li>
+            <li><a href="#">Surplus Donation System</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="contact-list">
+            <li>
+              <i class='bx bx-envelope contact-icon' aria-hidden="true"></i>
+              <a href="mailto:refoodify5@gmail.com">refoodify5@gmail.com</a>
+            </li>
+            <li>
+              <i class='bx bx-phone contact-icon' aria-hidden="true"></i>
+              <a href="tel:+250795611830">+250 795611830</a>
+            </li>
+            <li>
+              <i class='bx  bxs-location-check contact-icon-alt'></i>
+              Across the African continent
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <p>© 2025 Refoodify. All rights reserved. Refoodifying Life, one meal at a time.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login • Refoodify</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="promo-bar">
+    <a href="#" class="promo-btn">Refoodifying Life, one meal at a time.</a>
+    <button class="promo-close" aria-label="Close">&times;</button>
+  </div>
+  <header class="refoodify-header">
+    <div class="header-inner container">
+      <div class="logo-container">
+        <a href="/">
+          <img src="./assets/logo.png" alt="Refoodify Logo" class="site-logo-image">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="analyzer.html">Analyzer</a>
+        <a href="donations.html">Donations</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="tips.html">Tips</a>
+      </nav>
+      <div class="header-auth">
+        <a href="register.html" class="btn btn-outline">Sign Up</a>
+        <a href="login.html" class="btn btn-primary">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="auth-section">
+    <div class="container">
+      <div class="auth-card">
+        <h1 class="auth-title">Welcome back</h1>
+        <p class="auth-subtitle">Log in to continue your Refoodify journey</p>
+        <form class="auth-form" action="#" method="post">
+          <div class="form-row">
+            <label class="form-label" for="login-email">Email</label>
+            <input class="form-input" id="login-email" name="email" type="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="login-password">Password</label>
+            <div class="form-input-group">
+              <input class="form-input" id="login-password" name="password" type="password" placeholder="Enter your password" required>
+              <button type="button" class="toggle-password" aria-label="Show or hide password">👁️</button>
+            </div>
+          </div>
+          <div class="form-actions">
+            <a href="#" class="form-link">Forgot password?</a>
+          </div>
+          <button class="auth-submit" type="submit">Login</button>
+          <div class="social-row">
+            <button type="button" class="social-btn google"><i class='bx bxl-google' aria-hidden="true"></i> Google</button>
+            <button type="button" class="social-btn facebook"><i class='bx bxl-facebook' aria-hidden="true"></i> Facebook</button>
+          </div>
+        </form>
+        <p class="auth-switch">New to Refoodify? <a href="register.html" class="form-link">Create an account</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-brand">
+          <div class="brand-row">
+            <img src="./assets/logo.png" alt="Refoodify Logo" style="height:32px; width:auto;">
+            <span class="brand-name">Refoodify</span>
+          </div>
+          <p class="brand-description">Turning leftovers into solutions. Join our community in reducing food waste.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="analyzer.html">Analyzer</a></li>
+            <li><a href="surplus-donations.html">Donations</a></li>
+            <li><a href="tracker.html">Tracker</a></li>
+            <li><a href="tips.html">Tips</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="education.html">Education Hub</a></li>
+            <li><a href="impact-stories.html">Impact Stories</a></li>
+            <li><a href="impact-tracker.html">Impact Tracker</a></li>
+            <li><a href="surplus-donations.html">Surplus Donation System</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="contact-list">
+            <li>
+              <i class='bx bx-envelope' style='color:#165706' aria-hidden="true"></i>
+              <a href="mailto:refoodify5@gmail.com">refoodify5@gmail.com</a>
+            </li>
+            <li>
+              <i class='bx bx-phone' style='color:#165706' aria-hidden="true"></i>
+              <a href="tel:+250795611830">+250 795611830</a>
+            </li>
+            <li>
+              <i class='bx  bxs-location-check' style='color:#4e9d5d'></i>
+              Across the African continent
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <p>© 2025 Refoodify. All rights reserved. Refoodifying Life, one meal at a time.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

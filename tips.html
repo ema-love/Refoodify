@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Food-Saving Tips • Refoodify</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="promo-bar">
+    <a href="#" class="promo-btn">Refoodifying Life, one meal at a time.</a>
+    <button class="promo-close" aria-label="Close">&times;</button>
+  </div>
+  <header class="refoodify-header">
+    <div class="header-inner container">
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="./assets/logo.png" alt="Refoodify Logo" class="site-logo-image">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="analyzer.html">Analyzer</a>
+        <a href="donations.html">Donations</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="tips.html">Tips</a>
+      </nav>
+      <div class="header-auth">
+        <a href="register.html" class="btn btn-outline">Sign Up</a>
+        <a href="login.html" class="btn btn-primary">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="tips-page">
+    <!-- Google Custom Search API powers tip search below. Enter your API key and CSE ID in script.js -->
+    <section class="tips-hero">
+      <div class="container tips-hero-inner">
+        <div class="tips-hero-icon">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 3c-4 3-6 6-6 9a6 6 0 0012 0c0-3-2-6-6-9z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <h1 class="tips-title">Smart Food-Saving Tips</h1>
+        <p class="tips-subtitle">Simple habits, big impact. Refoodify helps you make every ingredient count.</p>
+      </div>
+    </section>
+
+    <section class="tips-search-section">
+      <div class="container">
+        <form class="tips-search" id="tipsSearch" autocomplete="off">
+          <div class="search-group">
+            <span class="search-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="11" cy="11" r="7" stroke-width="2"></circle>
+                <path d="M20 20l-3.5-3.5" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+            </span>
+            <input type="text" class="search-input" id="tipsQuery" placeholder="Search tips… (e.g., rice, storage, vegetables)">
+            <select class="tips-filter" id="tipsFilter">
+              <option value="">All Categories</option>
+              <option>Storage Tips</option>
+              <option>Zero-Waste Hacks</option>
+              <option>Near-Expiry Tips</option>
+              <option>Ingredient-Specific Tips</option>
+              <option>Beginner Tips</option>
+              <option>Budget-Friendly Tips</option>
+            </select>
+            <button class="analyze-btn" type="submit">Search</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="tips-featured">
+      <div class="container">
+        <div class="tip-hero-card">
+          <div class="tip-hero-icon">💡</div>
+          <div class="tip-hero-text" id="tipOfDay">Keep herbs fresh longer by storing them in a jar of water like a bouquet.</div>
+          <button class="btn btn-outline" id="tipsShuffle">Show another tip</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="tips-grid-section">
+      <div class="container">
+        <div class="tips-cats" id="tipsCats"></div>
+        <div class="tips-grid" id="tipsGrid"></div>
+      </div>
+    </section>
+
+    <section class="tips-saved" id="tipsSavedSection" style="display:none;">
+      <div class="container">
+        <h2 class="section-heading">Your Saved Tips</h2>
+        <div class="saved-row" id="savedRow"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-brand">
+          <div class="brand-row">
+            <img src="./assets/logo.png" alt="Refoodify Logo" style="height:32px; width:auto;">
+            <span class="brand-name">Refoodify</span>
+          </div>
+          <p class="brand-description">Turning leftovers into solutions. Join our community in reducing food waste.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="analyzer.html">Analyzer</a></li>
+            <li><a href="surplus-donations.html">Donations</a></li>
+            <li><a href="tracker.html">Tracker</a></li>
+            <li><a href="tips.html">Tips</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="education.html">Education Hub</a></li>
+            <li><a href="impact-stories.html">Impact Stories</a></li>
+            <li><a href="impact-tracker.html">Impact Tracker</a></li>
+            <li><a href="surplus-donations.html">Surplus Donation System</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="contact-list">
+            <li>
+              <i class='bx bx-envelope contact-icon' aria-hidden="true"></i>
+              <a href="mailto:refoodify5@gmail.com">refoodify5@gmail.com</a>
+            </li>
+            <li>
+              <i class='bx bx-phone contact-icon' aria-hidden="true"></i>
+              <a href="tel:+250795611830">+250 795611830</a>
+            </li>
+            <li>
+              <i class='bx  bxs-location-check contact-icon-alt'></i>
+              Across the African continent
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <p>© 2025 Refoodify. All rights reserved. Refoodifying Life, one meal at a time.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

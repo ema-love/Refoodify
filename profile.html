@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile • Refoodify</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="promo-bar">
+    <a href="#" class="promo-btn">Refoodifying Life, one meal at a time.</a>
+    <button class="promo-close" aria-label="Close">&times;</button>
+  </div>
+  <header class="refoodify-header">
+    <div class="header-inner container">
+      <div class="logo-container">
+        <a href="/">
+          <img src="./assets/logo.png" alt="Refoodify Logo" class="site-logo-image">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="analyzer.html">Analyzer</a>
+        <a href="donations.html">Donations</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="tips.html">Tips</a>
+      </nav>
+      <div class="header-auth">
+        <a href="register.html" class="btn btn-outline">Sign Up</a>
+        <a href="login.html" class="btn btn-primary">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Profile Summary Cards Section -->
+  <section class="profile-summary-cards" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2rem; max-width:1100px; margin:2rem auto;">
+    <div class="summary-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.5rem; display:flex; flex-direction:column; align-items:center;">
+      <i class='bx bx-bookmark' style='color:#557C22; font-size:2rem; margin-bottom:0.7rem;'></i>
+      <div style="color:#557C22; font-size:1.08rem; font-weight:600; margin-bottom:0.3rem;">Saved Items</div>
+      <div style="color:#6A8A4A; font-size:0.98rem;">12 saved recipes</div>
+    </div>
+    <div class="summary-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.5rem; display:flex; flex-direction:column; align-items:center;">
+      <i class='bx bx-history' style='color:#557C22; font-size:2rem; margin-bottom:0.7rem;'></i>
+      <div style="color:#557C22; font-size:1.08rem; font-weight:600; margin-bottom:0.3rem;">Donation History</div>
+      <div style="color:#6A8A4A; font-size:0.98rem;">15 donations</div>
+    </div>
+    <div class="summary-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.5rem; display:flex; flex-direction:column; align-items:center;">
+      <i class='bx bx-pie-chart-alt' style='color:#557C22; font-size:2rem; margin-bottom:0.7rem;'></i>
+      <div style="color:#557C22; font-size:1.08rem; font-weight:600; margin-bottom:0.3rem;">Impact Insights</div>
+      <div style="color:#6A8A4A; font-size:0.98rem;">82kg food saved</div>
+    </div>
+    <div class="summary-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.5rem; display:flex; flex-direction:column; align-items:center;">
+      <i class='bx bx-book-open' style='color:#557C22; font-size:2rem; margin-bottom:0.7rem;'></i>
+      <div style="color:#557C22; font-size:1.08rem; font-weight:600; margin-bottom:0.3rem;">Learning Progress</div>
+      <div style="color:#6A8A4A; font-size:0.98rem;">5 tutorials completed</div>
+    </div>
+    <div class="summary-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.5rem; display:flex; flex-direction:column; align-items:center;">
+      <i class='bx bx-medal' style='color:#557C22; font-size:2rem; margin-bottom:0.7rem;'></i>
+      <div style="color:#557C22; font-size:1.08rem; font-weight:600; margin-bottom:0.3rem;">Badges & Achievements</div>
+      <div style="color:#6A8A4A; font-size:0.98rem;">3 badges earned</div>
+    </div>
+    <div class="summary-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.5rem; display:flex; flex-direction:column; align-items:center;">
+      <i class='bx bx-cog' style='color:#557C22; font-size:2rem; margin-bottom:0.7rem;'></i>
+      <div style="color:#557C22; font-size:1.08rem; font-weight:600; margin-bottom:0.3rem;">Account Settings</div>
+      <div style="color:#6A8A4A; font-size:0.98rem;">Manage preferences</div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section class="about-me-block" style="max-width:700px; margin:2rem auto; background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:2rem;">
+    <h3 style="color:#557C22; font-size:1.18rem; font-weight:600; margin-bottom:0.7rem;">About Me</h3>
+    <p style="color:#333; font-size:1.05rem; margin-bottom:1rem;">Passionate about cooking, sustainability, and helping my community reduce food waste.</p>
+    <div style="display:flex; gap:1.2rem; margin-bottom:1rem;">
+      <span style="background:#BBD29B; color:#557C22; border-radius:12px; padding:0.3rem 1rem; font-size:0.95rem; display:flex; align-items:center; gap:0.5rem;"><i class='bx bx-map' style='font-size:1.1rem;'></i> Kigali, Rwanda</span>
+      <span style="background:#BBD29B; color:#557C22; border-radius:12px; padding:0.3rem 1rem; font-size:0.95rem; display:flex; align-items:center; gap:0.5rem;"><i class='bx bx-heart' style='font-size:1.1rem;'></i> Cooking, Sustainability</span>
+      <span style="background:#BBD29B; color:#557C22; border-radius:12px; padding:0.3rem 1rem; font-size:0.95rem; display:flex; align-items:center; gap:0.5rem;"><i class='bx bx-book' style='font-size:1.1rem;'></i> Vegetarian</span>
+    </div>
+    <button style="background:#8DA966; color:#fff; border-radius:14px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:500;">Edit Bio</button>
+  </section>
+
+  <!-- Activity Overview Section -->
+  <section class="activity-overview-block" style="max-width:900px; margin:2rem auto; background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:2rem;">
+    <h3 style="color:#557C22; font-size:1.18rem; font-weight:600; margin-bottom:1rem;">Activity Overview</h3>
+    <div style="display:flex; gap:1.2rem; margin-bottom:1rem;">
+      <button style="background:#8DA966; color:#fff; border-radius:14px; padding:0.5rem 1.2rem; font-size:0.98rem; border:none;">This Week</button>
+      <button style="background:#fff; color:#557C22; border-radius:14px; padding:0.5rem 1.2rem; font-size:0.98rem; border:2px solid #8DA966;">This Month</button>
+      <button style="background:#fff; color:#557C22; border-radius:14px; padding:0.5rem 1.2rem; font-size:0.98rem; border:2px solid #8DA966;">All Time</button>
+    </div>
+    <div style="display:flex; gap:2rem; flex-wrap:wrap;">
+      <div style="flex:1; min-width:180px; background:#BBD29B; border-radius:14px; padding:1rem; text-align:center;">
+        <div style="color:#557C22; font-size:1.1rem; font-weight:700;">5</div>
+        <div style="color:#6A8A4A; font-size:0.98rem;">Donations completed</div>
+      </div>
+      <div style="flex:1; min-width:180px; background:#BBD29B; border-radius:14px; padding:1rem; text-align:center;">
+        <div style="color:#557C22; font-size:1.1rem; font-weight:700;">8</div>
+        <div style="color:#6A8A4A; font-size:0.98rem;">Recipes opened</div>
+      </div>
+      <div style="flex:1; min-width:180px; background:#BBD29B; border-radius:14px; padding:1rem; text-align:center;">
+        <div style="color:#557C22; font-size:1.1rem; font-weight:700;">3</div>
+        <div style="color:#6A8A4A; font-size:0.98rem;">Tutorials completed</div>
+      </div>
+      <div style="flex:1; min-width:180px; background:#BBD29B; border-radius:14px; padding:1rem; text-align:center;">
+        <div style="color:#557C22; font-size:1.1rem; font-weight:700;">2</div>
+        <div style="color:#6A8A4A; font-size:0.98rem;">Tips followed</div>
+      </div>
+      <div style="flex:1; min-width:180px; background:#BBD29B; border-radius:14px; padding:1rem; text-align:center;">
+        <div style="color:#557C22; font-size:1.1rem; font-weight:700;">12kg</div>
+        <div style="color:#6A8A4A; font-size:0.98rem;">Waste reduced</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Summary Section -->
+  <section class="impact-summary-block" style="background:#BBD29B; border-radius:18px; max-width:900px; margin:2rem auto; padding:2rem; text-align:center;">
+    <h3 style="color:#557C22; font-size:1.18rem; font-weight:600; margin-bottom:1rem;">Your Impact</h3>
+    <div style="display:flex; gap:2rem; justify-content:center; flex-wrap:wrap;">
+      <div style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1rem 2rem; text-align:center; min-width:120px;">
+        <i class='bx bx-bowl-hot' style='color:#8DA966; font-size:1.5rem;'></i>
+        <div style="color:#557C22; font-size:1.2rem; font-weight:700;">120</div>
+        <div style="color:#6A8A4A; font-size:0.98rem;">Meals Created</div>
+      </div>
+      <div style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1rem 2rem; text-align:center; min-width:120px;">
+        <i class='bx bx-leaf' style='color:#8DA966; font-size:1.5rem;'></i>
+        <div style="color:#557C22; font-size:1.2rem; font-weight:700;">82kg</div>
+        <div style="color:#6A8A4A; font-size:0.98rem;">CO₂ Reduced</div>
+      </div>
+      <div style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1rem 2rem; text-align:center; min-width:120px;">
+        <i class='bx bx-globe' style='color:#8DA966; font-size:1.5rem;'></i>
+        <div style="color:#557C22; font-size:1.2rem; font-weight:700;">15</div>
+        <div style="color:#6A8A4A; font-size:0.98rem;">People Helped</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements & Badges Section -->
+  <section class="badges-block" style="max-width:900px; margin:2rem auto;">
+    <h3 style="color:#557C22; font-size:1.18rem; font-weight:600; margin-bottom:1rem;">Achievements & Badges</h3>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1.2rem;">
+      <div style="background:#fff; border-radius:50%; box-shadow:0 2px 12px rgba(85,124,34,0.07); width:120px; height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <img src="assets/badge1.png" alt="First Donation" style="width:60px; margin-bottom:0.5rem;">
+        <div style="color:#557C22; font-size:0.98rem; font-weight:600;">First Donation</div>
+      </div>
+      <div style="background:#fff; border-radius:50%; box-shadow:0 2px 12px rgba(85,124,34,0.07); width:120px; height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <img src="assets/badge2.png" alt="Waste Warrior" style="width:60px; margin-bottom:0.5rem;">
+        <div style="color:#557C22; font-size:0.98rem; font-weight:600;">Waste Warrior</div>
+      </div>
+      <div style="background:#fff; border-radius:50%; box-shadow:0 2px 12px rgba(85,124,34,0.07); width:120px; height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <img src="assets/badge3.png" alt="Recipe Explorer" style="width:60px; margin-bottom:0.5rem;">
+        <div style="color:#557C22; font-size:0.98rem; font-weight:600;">Recipe Explorer</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Progress Preview -->
+  <section class="learning-progress-block" style="max-width:900px; margin:2rem auto; display:flex; gap:2rem; flex-wrap:wrap;">
+    <div class="progress-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); flex:1; min-width:220px; padding:1.2rem;">
+      <div style="color:#557C22; font-size:1.08rem; font-weight:600; margin-bottom:0.5rem;">Tutorials Completed</div>
+      <div style="color:#6A8A4A; font-size:0.98rem; margin-bottom:0.7rem;">3</div>
+      <div style="background:#BBD29B; border-radius:8px; height:8px; width:100%; margin-bottom:0.7rem;">
+        <div style="background:#8DA966; height:8px; border-radius:8px; width:60%;"></div>
+      </div>
+      <button class="btn" style="background:#8DA966; color:#fff; border-radius:14px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:500;">Continue Learning</button>
+    </div>
+    <div class="progress-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); flex:1; min-width:220px; padding:1.2rem;">
+      <div style="color:#557C22; font-size:1.08rem; font-weight:600; margin-bottom:0.5rem;">Courses In Progress</div>
+      <div style="color:#6A8A4A; font-size:0.98rem; margin-bottom:0.7rem;">2</div>
+      <div style="background:#BBD29B; border-radius:8px; height:8px; width:100%; margin-bottom:0.7rem;">
+        <div style="background:#8DA966; height:8px; border-radius:8px; width:40%;"></div>
+      </div>
+      <button class="btn" style="background:#8DA966; color:#fff; border-radius:14px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:500;">Continue Learning</button>
+    </div>
+    <div class="progress-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); flex:1; min-width:220px; padding:1.2rem;">
+      <div style="color:#557C22; font-size:1.08rem; font-weight:600; margin-bottom:0.5rem;">Skill Level</div>
+      <div style="color:#6A8A4A; font-size:0.98rem; margin-bottom:0.7rem;">Intermediate</div>
+      <div style="background:#BBD29B; border-radius:8px; height:8px; width:100%; margin-bottom:0.7rem;">
+        <div style="background:#8DA966; height:8px; border-radius:8px; width:70%;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Account & Preferences Section -->
+  <section class="account-preferences-block" style="max-width:700px; margin:2rem auto; background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:2rem;">
+    <h3 style="color:#557C22; font-size:1.18rem; font-weight:600; margin-bottom:0.7rem;">Account & Preferences</h3>
+    <div style="margin-bottom:1rem;">
+      <div style="color:#6A8A4A; font-size:0.98rem; margin-bottom:0.3rem;">Personal Info</div>
+      <div style="color:#333; font-size:1.05rem;">Jane Doe | jane@example.com</div>
+    </div>
+    <div style="margin-bottom:1rem;">
+      <div style="color:#6A8A4A; font-size:0.98rem; margin-bottom:0.3rem;">Notification Settings</div>
+      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input type="checkbox" checked> <span>Email</span></label>
+      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input type="checkbox"> <span>Push</span></label>
+      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input type="checkbox"> <span>Weekly Digest</span></label>
+    </div>
+    <div style="margin-bottom:1rem;">
+      <div style="color:#6A8A4A; font-size:0.98rem; margin-bottom:0.3rem;">Privacy Settings</div>
+      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input type="checkbox"> <span>Show/share impact?</span></label>
+      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input type="checkbox"> <span>Hide activity?</span></label>
+    </div>
+    <div style="margin-bottom:1rem;">
+      <div style="color:#6A8A4A; font-size:0.98rem; margin-bottom:0.3rem;">Food Preferences</div>
+      <div style="color:#333; font-size:1.05rem;">Vegetarian, African cuisine</div>
+    </div>
+  </section>
+
+  <!-- Security Section -->
+  <section class="security-block" style="max-width:700px; margin:2rem auto; background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:2rem;">
+    <h3 style="color:#557C22; font-size:1.18rem; font-weight:600; margin-bottom:0.7rem;">Security</h3>
+    <div style="margin-bottom:1rem;">
+      <label style="display:block; margin-bottom:0.5rem;">Change Password</label>
+      <input type="password" placeholder="Current password" style="width:100%; padding:0.7rem; border-radius:10px; border:1.5px solid #BBD29B; margin-bottom:0.5rem;">
+      <input type="password" placeholder="New password" style="width:100%; padding:0.7rem; border-radius:10px; border:1.5px solid #BBD29B; margin-bottom:0.5rem;">
+      <input type="password" placeholder="Confirm new password" style="width:100%; padding:0.7rem; border-radius:10px; border:1.5px solid #BBD29B;">
+    </div>
+    <div style="margin-bottom:1rem;">
+      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input type="checkbox"> <span>Two-factor authentication</span></label>
+      <label style="display:block; margin-bottom:0.5rem;">Device Sessions</label>
+      <div style="color:#333; font-size:1.05rem;">iPhone, MacBook Pro</div>
+      <button style="background:#FF6F61; color:#fff; border-radius:14px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:500; margin-top:0.7rem;">Log out all devices</button>
+    </div>
+    <button style="background:#FF6F61; color:#fff; border-radius:14px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:500;">Delete Account</button>
+  </section>
+
+  <!-- My Donations Quick Preview -->
+  <section class="my-donations-preview-block" style="max-width:900px; margin:2rem auto;">
+    <h3 style="color:#557C22; font-size:1.18rem; font-weight:600; margin-bottom:1rem;">My Donations</h3>
+    <div style="display:flex; gap:2rem; overflow-x:auto;">
+      <div style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); min-width:220px; padding:1.2rem; display:flex; flex-direction:column; align-items:center;">
+        <div style="width:60px; height:60px; background:linear-gradient(135deg,#BBD29B,#8DA966); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:0.7rem; font-size:28px;">🥗</div>
+        <div style="color:#557C22; font-size:1rem; font-weight:600; margin-bottom:0.3rem;">Vegetable Stir-Fry</div>
+        <span style="background:#8DA966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem; margin-bottom:0.5rem;">Completed</span>
+        <div style="color:#6A8A4A; font-size:0.95rem;">Nov 20, 2025</div>
+      </div>
+      <div style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); min-width:220px; padding:1.2rem; display:flex; flex-direction:column; align-items:center;">
+        <div style="width:60px; height:60px; background:linear-gradient(135deg,#BBD29B,#8DA966); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:0.7rem; font-size:28px;">🍚</div>
+        <div style="color:#557C22; font-size:1rem; font-weight:600; margin-bottom:0.3rem;">Rice & Beans</div>
+        <span style="background:#FFD966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem; margin-bottom:0.5rem;">Pending</span>
+        <div style="color:#6A8A4A; font-size:0.95rem;">Nov 22, 2025</div>
+      </div>
+      <div style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); min-width:220px; padding:1.2rem; display:flex; flex-direction:column; align-items:center;">
+        <div style="width:60px; height:60px; background:linear-gradient(135deg,#BBD29B,#8DA966); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:0.7rem; font-size:28px;">🍎</div>
+        <div style="color:#557C22; font-size:1rem; font-weight:600; margin-bottom:0.3rem;">Fruit Basket</div>
+        <span style="background:#8DA966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem; margin-bottom:0.5rem;">Completed</span>
+        <div style="color:#6A8A4A; font-size:0.95rem;">Nov 18, 2025</div>
+      </div>
+    </div>
+    <button class="btn" style="background:#8DA966; color:#fff; border-radius:14px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:500; margin-top:1.2rem;">View Full History</button>
+  </section>
+
+  <!-- Footer Call-to-Action -->
+  <section class="cta-footer-block" style="background:#8DA966; color:#fff; text-align:center; padding:2.5rem 0; margin-top:2rem; border-radius:18px;">
+    <div style="font-size:1.18rem; font-weight:500; margin-bottom:1.1rem;">Let’s keep making a difference together.</div>
+    <a href="tracker.html" class="btn" style="background:#fff; color:#557C22; border-radius:18px; padding:0.8rem 2.2rem; font-size:1.08rem; font-weight:600;">Track Your Impact</a>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-brand">
+          <div class="brand-row">
+            <img src="./assets/logo.png" alt="Refoodify Logo" style="height:32px; width:auto;">
+            <span class="brand-name">Refoodify</span>
+          </div>
+          <p class="brand-description">Turning leftovers into solutions. Join our community in reducing food waste.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="analyzer.html">Analyzer</a></li>
+            <li><a href="donations.html">Donations</a></li>
+            <li><a href="tracker.html">Tracker</a></li>
+            <li><a href="tips.html">Tips</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="#">Education Hub</a></li>
+            <li><a href="#">Impact Stories</a></li>
+            <li><a href="#">Impact Tracker</a></li>
+            <li><a href="#">Surplus Donation System</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="contact-list">
+            <li>
+              <i class='bx bx-envelope' style='color:#165706' aria-hidden="true"></i>
+              <a href="mailto:refoodify5@gmail.com">refoodify5@gmail.com</a>
+            </li>
+            <li>
+              <i class='bx bx-phone' style='color:#165706' aria-hidden="true"></i>
+              <a href="tel:+250795611830">+250 795611830</a>
+            </li>
+            <li>
+              <i class='bx  bxs-location-check' style='color:#4e9d5d'></i>
+              Across the African continent
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <p>© 2025 Refoodify. All rights reserved. Refoodifying Life, one meal at a time.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

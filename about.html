@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Refoodify</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <meta name="description" content="About Refoodify — mission, values, and team working to reduce food waste." />
+</head>
+<body>
+  <div class="promo-bar">
+    <a href="#" class="promo-btn">Refoodifying Life, one meal at a time.</a>
+    <button class="promo-close" aria-label="Close">&times;</button>
+  </div>
+
+  <header class="refoodify-header">
+    <div class="header-inner container">
+      <div class="header-left">
+        <a href="mailto:e.akintayo@alustudent.com" class="contact-link">Contact Us</a>
+        <a href="#" aria-label="Saved Recipes" class="icon-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 4h12v16l-6-4-6 4V4z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="logo-container">
+        <a href="/">
+          <img src="./assets/logo.png" alt="Refoodify Logo" class="site-logo-image">
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="analyzer.html">Analyzer</a>
+        <a href="donations.html">Donations</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="tips.html">Tips</a>
+      </nav>
+
+      <div class="header-auth">
+        <a href="register.html" class="btn btn-outline">Sign Up</a>
+        <a href="login.html" class="btn btn-primary">Login</a>
+      </div>
+
+      <button class="mobile-menu-btn" aria-label="Open Menu">
+        <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="about-page">
+    <section class="page-hero">
+      <div class="hero-decor">
+        <canvas id="heroParticles" aria-hidden="true"></canvas>
+        <svg class="blob blob-1" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g transform="translate(300,300)">
+            <path id="b1" d="M120,-164.6C159.6,-139.7,193.2,-99.7,204.4,-56.8C215.5,-14,204.3,32.6,179.8,64.8C155.3,97.1,117.5,115,76.5,132.6C35.6,150.2,-9.6,167.5,-47.3,154.6C-85.1,141.7,-115.4,98.6,-146.9,54.6C-178.4,10.7,-211.3,-35.9,-198.7,-71.4C-186,-106.9,-128.8,-131.4,-83.4,-154.7C-38,-178,0.7,-200.1,44.4,-191.6C88,-183,136.4,-144,120,-164.6Z" class="blob-accent-2">
+              <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M120,-164.6C159.6,-139.7,193.2,-99.7,204.4,-56.8C215.5,-14,204.3,32.6,179.8,64.8C155.3,97.1,117.5,115,76.5,132.6C35.6,150.2,-9.6,167.5,-47.3,154.6C-85.1,141.7,-115.4,98.6,-146.9,54.6C-178.4,10.7,-211.3,-35.9,-198.7,-71.4C-186,-106.9,-128.8,-131.4,-83.4,-154.7C-38,-178,0.7,-200.1,44.4,-191.6C88,-183,136.4,-144,120,-164.6Z; M98,-150C140,-130,184,-110,196,-75C208,-40,197,5,178,40C158,75,126,100,84,122C42,144,-4,165,-44,154C-84,143,-118,110,-150,70C-183,30,-210,-15,-196,-55C-183,-94,-130,-126,-86,-150C-42,-174,-2,-190,40,-186C82,-182,118,-160,98,-150Z; M120,-164.6C159.6,-139.7,193.2,-99.7,204.4,-56.8C215.5,-14,204.3,32.6,179.8,64.8C155.3,97.1,117.5,115,76.5,132.6C35.6,150.2,-9.6,167.5,-47.3,154.6C-85.1,141.7,-115.4,98.6,-146.9,54.6C-178.4,10.7,-211.3,-35.9,-198.7,-71.4C-186,-106.9,-128.8,-131.4,-83.4,-154.7C-38,-178,0.7,-200.1,44.4,-191.6C88,-183,136.4,-144,120,-164.6Z" />
+            </path>
+          </g>
+        </svg>
+        <svg class="blob blob-2" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g transform="translate(300,300)">
+            <path id="b2" d="M73.1,-104.8C95.1,-86.9,117.7,-68.8,135.3,-44.9C152.9,-21,165.5,9.6,157.7,36.4C149.9,63.2,121.6,86.3,92.6,99.8C63.6,113.3,33,117.1,3,112.8C-27,108.6,-54,96.3,-76.6,79.6C-99.2,62.8,-117.5,41.6,-127.2,16.8C-136.9,-8.1,-138.9,-37.8,-122.6,-58.6C-106.3,-79.4,-71.6,-91.2,-39.4,-105.1C-7.2,-119,21.7,-135.1,49.7,-131.9C77.8,-128.7,103.5,-106.8,73.1,-104.8Z" class="blob-accent-1">
+              <animate attributeName="d" dur="8s" repeatCount="indefinite" values="M73.1,-104.8C95.1,-86.9,117.7,-68.8,135.3,-44.9C152.9,-21,165.5,9.6,157.7,36.4C149.9,63.2,121.6,86.3,92.6,99.8C63.6,113.3,33,117.1,3,112.8C-27,108.6,-54,96.3,-76.6,79.6C-99.2,62.8,-117.5,41.6,-127.2,16.8C-136.9,-8.1,-138.9,-37.8,-122.6,-58.6C-106.3,-79.4,-71.6,-91.2,-39.4,-105.1C-7.2,-119,21.7,-135.1,49.7,-131.9C77.8,-128.7,103.5,-106.8,73.1,-104.8Z; M60,-96C86,-82,118,-66,136,-44C154,-22,162,6,152,30C142,54,116,74,86,92C56,110,22,122,-10,122C-42,122,-82,110,-104,88C-126,66,-130,34,-136,4C-142,-26,-150,-56,-136,-78C-122,-100,-86,-114,-56,-130C-26,-146,2,-164,34,-160C66,-156,92,-110,60,-96Z; M73.1,-104.8C95.1,-86.9,117.7,-68.8,135.3,-44.9C152.9,-21,165.5,9.6,157.7,36.4C149.9,63.2,121.6,86.3,92.6,99.8C63.6,113.3,33,117.1,3,112.8C-27,108.6,-54,96.3,-76.6,79.6C-99.2,62.8,-117.5,41.6,-127.2,16.8C-136.9,-8.1,-138.9,-37.8,-122.6,-58.6C-106.3,-79.4,-71.6,-91.2,-39.4,-105.1C-7.2,-119,21.7,-135.1,49.7,-131.9C77.8,-128.7,103.5,-106.8,73.1,-104.8Z" />
+            </path>
+          </g>
+        </svg>
+          </g>
+        </svg>
+      </div>
+      <div class="container">
+        <h1 class="page-title">About Refoodify</h1>
+        <p class="page-subtitle">We're on a mission to eliminate food waste through technology, education, and community empowerment.</p>
+      </div>
+    </section>
+
+    <section class="mission container">
+      <div class="mission-grid">
+        <div class="mission-text">
+          <h2 class="section-heading">Building a Zero-Waste Future</h2>
+          <p>Founded in 2025, Refoodify emerged from a simple observation: billions of pounds of food are wasted annually while millions face food insecurity. We build tools, provide education, and connect communities to reduce food waste and create positive environmental impact.</p>
+          <p>Today, we're proud to serve a global community of individuals, restaurants, and organizations committed to reducing food waste and creating measurable impact.</p>
+        </div>
+
+        <aside class="mission-stats">
+            <div class="stat-card standard-card">
+            <div class="stat-value">50K+</div>
+            <div class="stat-label">Active Users</div>
+          </div>
+            <div class="stat-card standard-card">
+            <div class="stat-value">2.5M+</div>
+            <div class="stat-label">Meals Saved</div>
+          </div>
+            <div class="stat-card standard-card">
+            <div class="stat-value">1,200+</div>
+            <div class="stat-label">Partners</div>
+          </div>
+            <div class="stat-card standard-card">
+            <div class="stat-value">40+</div>
+            <div class="stat-label">Countries</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="values container">
+      <h2 class="section-heading">Our Values</h2>
+      <p class="section-subtitle">The principles that guide everything we do</p>
+      <div class="content-grid">
+        <div class="grid">
+          <div class="standard-card value-card">
+            <div class="value-icon">💚</div>
+            <h3>Community First</h3>
+            <p>We believe in the power of collective action to create lasting change.</p>
+          </div>
+          <div class="standard-card value-card">
+            <div class="value-icon">🌿</div>
+            <h3>Environmental Impact</h3>
+            <p>Every action counts towards a healthier, more sustainable planet.</p>
+          </div>
+          <div class="standard-card value-card">
+            <div class="value-icon">📈</div>
+            <h3>Continuous Growth</h3>
+            <p>Learning and improving together through shared knowledge and experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team container">
+      <h2 class="section-heading">Led by Passionate Innovators</h2>
+      <p class="section-subtitle">Our leadership and founding team</p>
+      <div class="content-grid">
+        <div class="grid">
+          <div class="standard-card team-card">
+            <div class="avatar avatar-large">SC</div>
+            <h4>Sarah Chen</h4>
+            <div class="team-role">Founder & CEO</div>
+            <div class="team-note">Sustainability Leadership</div>
+          </div>
+          <div class="standard-card team-card">
+            <div class="avatar avatar-large">MT</div>
+            <h4>Michael Torres</h4>
+            <div class="team-role">CTO</div>
+            <div class="team-note">Food Tech Innovation</div>
+          </div>
+          <div class="standard-card team-card">
+            <div class="avatar avatar-large">AP</div>
+            <h4>Aisha Patel</h4>
+            <div class="team-role">Head of Community</div>
+            <div class="team-note">Social Impact</div>
+          </div>
+          <div class="standard-card team-card">
+            <div class="avatar avatar-large">JW</div>
+            <h4>James Wilson</h4>
+            <div class="team-role">Lead Designer</div>
+            <div class="team-note">User Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="join-cta">
+      <div class="container cta-card">
+        <h2>Ready to Make a Difference?</h2>
+        <p>Join thousands of users who are already reducing food waste and creating positive environmental impact.</p>
+        <div class="cta-actions">
+          <a href="register.html" class="btn btn-primary">Start Your Journey Today</a>
+          <a href="impact-stories.html" class="btn btn-outline">View Impact Stories</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (matching site) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-brand">
+          <div class="brand-row">
+            <img src="./assets/logo.png" alt="Refoodify Logo" style="height:32px; width:auto;">
+            <span class="brand-name">Refoodify</span>
+          </div>
+          <p class="brand-description">Turning leftovers into solutions. Join our community in reducing food waste.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="analyzer.html">Analyzer</a></li>
+            <li><a href="surplus-donations.html">Donations</a></li>
+            <li><a href="tracker.html">Tracker</a></li>
+            <li><a href="tips.html">Tips</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="education.html">Education Hub</a></li>
+            <li><a href="impact-stories.html">Impact Stories</a></li>
+            <li><a href="impact-tracker.html">Impact Tracker</a></li>
+            <li><a href="surplus-donations.html">Surplus Donation System</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="contact-list">
+            <li>
+              <i class='bx bx-envelope contact-icon' aria-hidden="true"></i>
+              <a href="mailto:refoodify5@gmail.com">refoodify5@gmail.com</a>
+            </li>
+            <li>
+              <i class='bx bx-phone contact-icon' aria-hidden="true"></i>
+              <a href="tel:+250795611830">+250 795611830</a>
+            </li>
+            <li>
+              <i class='bx  bxs-location-check contact-icon-alt'></i>
+              Across the African continent
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <p>© 2025 Refoodify. All rights reserved. Refoodifying Life, one meal at a time.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

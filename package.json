@@ -1,0 +1,20 @@
+{
+  "name": "refoodify",
+  "version": "1.0.0",
+  "description": "Food waste reduction platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "python3 test-apis.py"
+  },
+  "keywords": ["food-waste", "sustainability", "recipes", "community"],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}

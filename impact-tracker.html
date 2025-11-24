@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Impact Tracker — Refoodify</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="impact-tracker-page">
+  <div class="promo-bar">
+    <a href="#" class="promo-btn">Refoodifying Life, one meal at a time.</a>
+    <button class="promo-close" aria-label="Close">&times;</button>
+  </div>
+  <header class="refoodify-header">
+    <div class="header-inner container">
+      <div class="logo-container">
+        <a href="/">
+          <img src="./assets/logo.png" alt="Refoodify Logo" class="site-logo-image">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="analyzer.html">Analyzer</a>
+        <a href="donations.html">Donations</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="tips.html">Tips</a>
+      </nav>
+      <div class="header-auth">
+        <a href="register.html" class="btn btn-outline">Sign Up</a>
+        <a href="login.html" class="btn btn-primary">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Title + Intro Block -->
+    <section class="impact-header-block" style="background:#fff; padding:3rem 0 2rem; text-align:center;">
+      <h1 style="color:#557C22; font-size:2.8rem; font-weight:700; margin-bottom:0.5rem;">Impact Tracker</h1>
+      <div style="font-size:1.25rem; color:#333; margin-bottom:0.7rem;">Real-time food rescue metrics and sustainability insights.</div>
+      <hr style="border:0; height:2px; width:120px; background:#8DA966; margin:0.5rem auto 0; border-radius:2px;">
+    </section>
+
+    <!-- Live Metrics Dashboard -->
+    <section class="metrics-dashboard" style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; padding:2rem 0;">
+      <div class="metric-card" style="background:#BBD29B; border-radius:20px; box-shadow:0 4px 24px rgba(85,124,34,0.08); flex:1 1 220px; min-width:220px; max-width:260px; text-align:center; padding:1.5rem; transition:box-shadow 0.2s;">
+        <div style="font-size:2.2rem; color:#557C22; font-weight:700;">1,240</div>
+        <div style="color:#6A8A4A; font-size:1.05rem; margin-top:0.3rem;">Meals Rescued Today</div>
+      </div>
+      <div class="metric-card" style="background:#fff; border-radius:20px; box-shadow:0 4px 24px rgba(85,124,34,0.08); flex:1 1 220px; min-width:220px; max-width:260px; text-align:center; padding:1.5rem; transition:box-shadow 0.2s;">
+        <div style="font-size:2.2rem; color:#557C22; font-weight:700;">85,000+</div>
+        <div style="color:#6A8A4A; font-size:1.05rem; margin-top:0.3rem;">Total Meals Rescued</div>
+      </div>
+      <div class="metric-card" style="background:#BBD29B; border-radius:20px; box-shadow:0 4px 24px rgba(85,124,34,0.08); flex:1 1 220px; min-width:220px; max-width:260px; text-align:center; padding:1.5rem; transition:box-shadow 0.2s;">
+        <div style="font-size:2.2rem; color:#557C22; font-weight:700;">820</div>
+        <div style="color:#6A8A4A; font-size:1.05rem; margin-top:0.3rem;">CO₂ Emissions Avoided (kg)</div>
+      </div>
+      <div class="metric-card" style="background:#fff; border-radius:20px; box-shadow:0 4px 24px rgba(85,124,34,0.08); flex:1 1 220px; min-width:220px; max-width:260px; text-align:center; padding:1.5rem; transition:box-shadow 0.2s;">
+        <div style="font-size:2.2rem; color:#557C22; font-weight:700;">54</div>
+        <div style="color:#6A8A4A; font-size:1.05rem; margin-top:0.3rem;">Partners</div>
+      </div>
+      <div class="metric-card" style="background:#BBD29B; border-radius:20px; box-shadow:0 4px 24px rgba(85,124,34,0.08); flex:1 1 220px; min-width:220px; max-width:260px; text-align:center; padding:1.5rem; transition:box-shadow 0.2s;">
+        <div style="font-size:2.2rem; color:#557C22; font-weight:700;">42</div>
+        <div style="color:#6A8A4A; font-size:1.05rem; margin-top:0.3rem;">Communities Supported</div>
+      </div>
+      <div class="metric-card" style="background:#fff; border-radius:20px; box-shadow:0 4px 24px rgba(85,124,34,0.08); flex:1 1 220px; min-width:220px; max-width:260px; text-align:center; padding:1.5rem; transition:box-shadow 0.2s;">
+        <div style="font-size:2.2rem; color:#557C22; font-weight:700;">60%</div>
+        <div style="color:#6A8A4A; font-size:1.05rem; margin-top:0.3rem;">Waste Reduction</div>
+      </div>
+    </section>
+
+    <!-- Interactive Impact Map -->
+    <section class="impact-map-block" style="max-width:900px; margin:2rem auto; background:#fff; border-radius:22px; box-shadow:0 2px 16px rgba(85,124,34,0.09); padding:2rem;">
+      <h2 style="color:#557C22; font-size:1.4rem; font-weight:600; margin-bottom:1.2rem; text-align:center;">Impact Map</h2>
+      <div style="width:100%; height:320px; background:#F5F8F2; border-radius:18px; box-shadow:0 1px 8px rgba(85,124,34,0.07); position:relative;">
+        <div style="width:100%; height:100%; background:linear-gradient(135deg,#BBD29B,#8DA966); border-radius:18px; display:flex; align-items:center; justify-content:center; font-size:48px;">🗺️</div>
+        <!-- Pins and filters would be interactive in a full implementation -->
+      </div>
+      <div style="display:flex; gap:0.7rem; justify-content:center; margin-top:1.2rem; flex-wrap:wrap;">
+        <span style="background:#8DA966; color:#fff; border-radius:14px; padding:0.3rem 1.1rem; font-size:0.95rem;">Country</span>
+        <span style="background:#8DA966; color:#fff; border-radius:14px; padding:0.3rem 1.1rem; font-size:0.95rem;">City</span>
+        <span style="background:#8DA966; color:#fff; border-radius:14px; padding:0.3rem 1.1rem; font-size:0.95rem;">Donor Type</span>
+        <span style="background:#8DA966; color:#fff; border-radius:14px; padding:0.3rem 1.1rem; font-size:0.95rem;">Timeline</span>
+      </div>
+    </section>
+
+    <!-- Graphs & Charts Section -->
+    <section class="charts-section" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:2rem; max-width:1100px; margin:2rem auto;">
+      <div class="chart-card" style="background:#BBD29B; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem;">
+        <h3 style="color:#557C22; font-size:1.1rem; font-weight:600; margin-bottom:0.7rem;">Meals Rescued Over Time</h3>
+        <div style="width:100%; height:140px; background:linear-gradient(135deg,#8DA966,#BBD29B); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:48px;">📈</div>
+      </div>
+      <div class="chart-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem;">
+        <h3 style="color:#557C22; font-size:1.1rem; font-weight:600; margin-bottom:0.7rem;">Top Donor Categories</h3>
+        <div style="width:100%; height:140px; background:linear-gradient(135deg,#8DA966,#BBD29B); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:48px;">📊</div>
+      </div>
+      <div class="chart-card" style="background:#BBD29B; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem;">
+        <h3 style="color:#557C22; font-size:1.1rem; font-weight:600; margin-bottom:0.7rem;">Food Waste Distribution Saved</h3>
+        <div style="width:100%; height:140px; background:linear-gradient(135deg,#8DA966,#BBD29B); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:48px;">🥧</div>
+      </div>
+      <div class="chart-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.2rem;">
+        <h3 style="color:#557C22; font-size:1.1rem; font-weight:600; margin-bottom:0.7rem;">Monthly CO₂ Saved</h3>
+        <div style="width:100%; height:140px; background:linear-gradient(135deg,#8DA966,#BBD29B); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:48px;">📉</div>
+      </div>
+    </section>
+
+    <!-- Progress Bars – Sustainability Goals -->
+    <section class="progress-goals-block" style="max-width:900px; margin:2rem auto; background:#fff; border-radius:22px; box-shadow:0 2px 16px rgba(85,124,34,0.09); padding:2rem;">
+      <h2 style="color:#557C22; font-size:1.4rem; font-weight:600; margin-bottom:1.2rem; text-align:center;">Our Journey Toward Zero Waste</h2>
+      <div style="margin-bottom:1.2rem;">
+        <div style="font-size:1.05rem; color:#333; margin-bottom:0.3rem;">50,000 Meals Rescued Goal</div>
+        <div style="background:linear-gradient(90deg,#8DA966 0%,#557C22 100%); border-radius:10px; height:16px; position:relative;">
+          <div style="width:75%; height:100%; background:transparent; position:absolute; left:0; top:0;">
+            <img src="assets/leaf-icon.png" alt="Leaf" style="position:absolute; left:calc(75% - 16px); top:-6px; width:28px;">
+          </div>
+        </div>
+        <div style="font-size:0.95rem; color:#6A8A4A; margin-top:0.2rem;">75% achieved</div>
+      </div>
+      <div style="margin-bottom:1.2rem;">
+        <div style="font-size:1.05rem; color:#333; margin-bottom:0.3rem;">Waste-to-Resource Conversion Target</div>
+        <div style="background:linear-gradient(90deg,#8DA966 0%,#557C22 100%); border-radius:10px; height:16px; position:relative;">
+          <div style="width:40%; height:100%; background:transparent; position:absolute; left:0; top:0;">
+            <img src="assets/leaf-icon.png" alt="Leaf" style="position:absolute; left:calc(40% - 16px); top:-6px; width:28px;">
+          </div>
+        </div>
+        <div style="font-size:0.95rem; color:#6A8A4A; margin-top:0.2rem;">40% achieved</div>
+      </div>
+      <div>
+        <div style="font-size:1.05rem; color:#333; margin-bottom:0.3rem;">Donor Participation Increase Target</div>
+        <div style="background:linear-gradient(90deg,#8DA966 0%,#557C22 100%); border-radius:10px; height:16px; position:relative;">
+          <div style="width:60%; height:100%; background:transparent; position:absolute; left:0; top:0;">
+            <img src="assets/leaf-icon.png" alt="Leaf" style="position:absolute; left:calc(60% - 16px); top:-6px; width:28px;">
+          </div>
+        </div>
+        <div style="font-size:0.95rem; color:#6A8A4A; margin-top:0.2rem;">60% achieved</div>
+      </div>
+    </section>
+
+    <!-- Community Impact Mini-Stories -->
+    <section class="mini-stories-strip" style="overflow-x:auto; white-space:nowrap; padding:2rem 0 1.5rem;">
+      <div class="mini-stories-inner" style="display:inline-flex; gap:2rem;">
+        <div class="mini-story-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); min-width:220px; max-width:260px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+          <img src="assets/community1.jpg" alt="Community 1" style="width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:0.7rem;">
+          <div style="color:#557C22; font-size:1rem; font-weight:600; margin-bottom:0.3rem;">Kigali Community</div>
+          <div style="color:#333; font-size:0.95rem; margin-bottom:0.5rem;">Refoodify helped reduce weekly waste by 35%.</div>
+          <span style="background:#8DA966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem;">Verified Impact</span>
+        </div>
+        <div class="mini-story-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); min-width:220px; max-width:260px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+          <img src="assets/community2.jpg" alt="Community 2" style="width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:0.7rem;">
+          <div style="color:#557C22; font-size:1rem; font-weight:600; margin-bottom:0.3rem;">Nairobi Restaurant</div>
+          <div style="color:#333; font-size:0.95rem; margin-bottom:0.5rem;">Cut food waste by 50% in 3 months.</div>
+          <span style="background:#8DA966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem;">Verified Impact</span>
+        </div>
+        <div class="mini-story-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(85,124,34,0.07); min-width:220px; max-width:260px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+          <img src="assets/community3.jpg" alt="Community 3" style="width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:0.7rem;">
+          <div style="color:#557C22; font-size:1rem; font-weight:600; margin-bottom:0.3rem;">Lagos Household</div>
+          <div style="color:#333; font-size:0.95rem; margin-bottom:0.5rem;">Turned leftovers into 20+ meals weekly.</div>
+          <span style="background:#8DA966; color:#fff; border-radius:12px; padding:0.2rem 0.8rem; font-size:0.85rem;">Verified Impact</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Reports Section -->
+    <section class="download-reports-block" style="background:#fff; border:2px solid #BBD29B; border-radius:18px; max-width:700px; margin:2rem auto; display:flex; align-items:center; padding:2rem; box-shadow:0 2px 12px rgba(85,124,34,0.07);">
+      <div style="flex:0 0 80px; margin-right:2rem;">
+        <img src="assets/report-illustration.png" alt="Download Reports" style="width:80px; border-radius:12px;">
+      </div>
+      <div style="flex:1;">
+        <h3 style="color:#557C22; font-size:1.1rem; font-weight:600; margin-bottom:0.7rem;">Download Impact Reports</h3>
+        <div style="display:flex; gap:1rem;">
+          <a href="#" class="btn" style="background:#557C22; color:#fff; border-radius:14px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:500;">Download Monthly Report (PDF)</a>
+          <a href="#" class="btn" style="background:#557C22; color:#fff; border-radius:14px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:500;">Download Annual Impact Report</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call-to-Action Footer Block -->
+    <section class="cta-footer-block" style="background:#8DA966; color:#fff; text-align:center; padding:2.5rem 0; margin-top:2rem; border-radius:18px;">
+      <div style="font-size:1.25rem; font-weight:500; margin-bottom:1.1rem;">Every action counts. Help us rescue more meals and reduce waste.</div>
+      <a href="register.html" class="btn" style="background:#fff; color:#557C22; border-radius:18px; padding:0.8rem 2.2rem; font-size:1.08rem; font-weight:600;">Become a Donor</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-brand">
+          <div class="brand-row">
+            <img src="./assets/logo.png" alt="Refoodify logo" style="height:34px; width:auto;">
+            <span class="brand-name">Refoodify</span>
+          </div>
+          <p class="brand-description">Turning leftovers into solutions. Join our community in reducing food waste.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="analyzer.html">Analyzer</a></li>
+            <li><a href="surplus-donations.html">Donations</a></li>
+            <li><a href="tracker.html">Tracker</a></li>
+            <li><a href="tips.html">Tips</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="education.html">Education Hub</a></li>
+            <li><a href="impact-stories.html">Impact Stories</a></li>
+            <li><a href="impact-tracker.html">Impact Tracker</a></li>
+            <li><a href="surplus-donations.html">Surplus Donation System</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="contact-list">
+            <li>
+              <i class='bx bx-envelope contact-icon' aria-hidden="true"></i>
+              <a href="mailto:refoodify5@gmail.com">refoodify5@gmail.com</a>
+            </li>
+            <li>
+              <i class='bx bx-phone contact-icon' aria-hidden="true"></i>
+              <a href="tel:+250795611830">+250 795611830</a>
+            </li>
+            <li>
+              <i class='bx  bxs-location-check contact-icon-alt'></i>
+              Across the African continent
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <p>© 2025 Refoodify. All rights reserved. Refoodifying Life, one meal at a time.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Small counter animation when visible
+    document.addEventListener('DOMContentLoaded', function(){
+      var nums = document.querySelectorAll('.stat-num');
+      var io = new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ var el = en.target; var target = parseInt(el.getAttribute('data-target')||0,10); var start = 0; var dur = 1200; var t0 = performance.now(); function step(now){ var p = Math.min(1, (now - t0)/dur); el.textContent = Math.floor(p * target); if(p < 1) requestAnimationFrame(step); else el.textContent = target; } requestAnimationFrame(step); io.unobserve(el); } }); }, { threshold:0.2 });
+      nums.forEach(function(n){ io.observe(n); });
+    });
+  </script>
+</body>
+</html>

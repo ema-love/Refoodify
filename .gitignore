@@ -1,0 +1,47 @@
+# Node modules and dependencies
+node_modules/
+
+# Build and cache
+*.log
+.cache/
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment and secrets
+.env
+.env.*
+*.env
+
+# API keys and sensitive config
+apikeys.json
+secrets.json
+
+# Editor/project files
+.vscode/
+.idea/
+*.swp
+
+# Demo video and media
+*.mp4
+*.mov
+*.avi
+
+# Misc
+*.bak
+*.tmp
+
+# Ignore deployment scripts and SSH keys
+*.pem
+*.key
+*.crt
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Exclude server setup docs from public repo if needed
+SERVER_SETUP.md

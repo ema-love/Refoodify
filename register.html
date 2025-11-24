@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register • Refoodify</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="promo-bar">
+    <a href="#" class="promo-btn">Refoodifying Life, one meal at a time.</a>
+    <button class="promo-close" aria-label="Close">&times;</button>
+  </div>
+  <header class="refoodify-header">
+    <div class="header-inner container">
+      <div class="header-left">
+        <a href="mailto:owner@example.com" class="contact-link">Contact Us</a>
+        <a href="#" aria-label="Saved Recipes" class="icon-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 4h12v16l-6-4-6 4V4z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <div class="profile">
+          <button class="profile-btn" aria-haspopup="true" aria-expanded="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="8" r="4" stroke-width="2"></circle>
+              <path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke-width="2" stroke-linecap="round"></path>
+            </svg>
+          </button>
+          <div class="profile-menu">
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+          </div>
+        </div>
+      </div>
+      <div class="logo-container">
+        <a href="/">
+          <img src="./assets/logo.png" alt="Refoodify Logo" class="site-logo-image">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="mailto:refoodify5@gmail.com">Contact</a>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Open Menu">
+        <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="auth-section">
+    <div class="container">
+      <div class="auth-card">
+        <h1 class="auth-title">Create your account</h1>
+        <p class="auth-subtitle">Join Refoodify and start making an impact</p>
+        <form class="auth-form" action="#" method="post">
+          <div class="form-row">
+            <label class="form-label" for="reg-name">Full Name</label>
+            <input class="form-input" id="reg-name" name="name" type="text" placeholder="Jane Doe" required>
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="reg-email">Email</label>
+            <input class="form-input" id="reg-email" name="email" type="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="reg-phone">Phone Number (optional)</label>
+            <input class="form-input" id="reg-phone" name="phone" type="tel" placeholder="e.g., +250 795 000 000">
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="reg-password">Password</label>
+            <div class="form-input-group">
+              <input class="form-input" id="reg-password" name="password" type="password" placeholder="Enter password" required>
+              <button type="button" class="toggle-password" aria-label="Show or hide password">👁️</button>
+            </div>
+            <div class="pw-strength" id="pwStrength"><span class="pw-bar"></span></div>
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="reg-confirm">Confirm Password</label>
+            <div class="form-input-group">
+              <input class="form-input" id="reg-confirm" name="confirm" type="password" placeholder="Confirm password" required>
+              <button type="button" class="toggle-password" aria-label="Show or hide password">👁️</button>
+            </div>
+          </div>
+          <div class="form-actions">
+            <label class="form-checkbox">
+              <input type="checkbox" required>
+              <span>I agree to the terms</span>
+            </label>
+          </div>
+          <button class="auth-submit" type="submit">Register</button>
+          <div class="social-row">
+            <button type="button" class="social-btn google"><i class='bx bxl-google' aria-hidden="true"></i> Google</button>
+            <button type="button" class="social-btn facebook"><i class='bx bxl-facebook' aria-hidden="true"></i> Facebook</button>
+          </div>
+        </form>
+        <p class="auth-switch">Already have an account? <a href="login.html" class="form-link">Login</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-brand">
+          <div class="brand-row">
+            <img src="./assets/logo.png" alt="Refoodify Logo" style="height:32px; width:auto;">
+            <span class="brand-name">Refoodify</span>
+          </div>
+          <p class="brand-description">Turning leftovers into solutions. Join our community in reducing food waste.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Analyzer</a></li>
+            <li><a href="#">Donations</a></li>
+            <li><a href="tracker.html">Tracker</a></li>
+            <li><a href="tips.html">Tips</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="#">Education Hub</a></li>
+            <li><a href="#">Impact Stories</a></li>
+            <li><a href="#">Impact Tracker</a></li>
+            <li><a href="#">Surplus Donation System</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="contact-list">
+            <li>
+              <i class='bx bx-envelope' style='color:#165706' aria-hidden="true"></i>
+              <a href="mailto:refoodify5@gmail.com">refoodify5@gmail.com</a>
+            </li>
+            <li>
+              <i class='bx bx-phone' style='color:#165706' aria-hidden="true"></i>
+              <a href="tel:+250795611830">+250 795611830</a>
+            </li>
+            <li>
+              <i class='bx  bxs-location-check' style='color:#4e9d5d'></i>
+              Across the African continent
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <p>© 2025 Refoodify. All rights reserved. Refoodifying Life, one meal at a time.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
