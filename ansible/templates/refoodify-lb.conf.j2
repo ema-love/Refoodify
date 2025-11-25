@@ -1,0 +1,32 @@
+upstream refoodify_backend {
+{% for host in groups['webservers'] %}
+    server {{ hostvars[host]['ansible_host'] | default(host) }}:3000 max_fails=3 fail_timeout=30s;
+{% endfor %}
+    keepalive 32;
+}
+
+server {
+    listen 80;
+    server_name _;
+
+    access_log /var/log/nginx/refoodify_access.log;
+    error_log /var/log/nginx/refoodify_error.log;
+
+    location / {
+        proxy_pass http://refoodify_backend;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Connection "";
+        add_header X-Upstream-Addr $upstream_addr;
+    }
+
+    location /health {
+        access_log off;
+        add_header X-Upstream-Addr $upstream_addr;
+        return 200 "healthy\n";
+        add_header Content-Type text/plain;
+    }
+}

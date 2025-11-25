@@ -1,0 +1,18 @@
+[Unit]
+Description=Refoodify Application Server
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory={{ app_dir }}
+ExecStart=/usr/bin/node {{ app_dir }}/server.js
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+Environment="PORT=3000"
+Environment="NODE_ENV=production"
+
+[Install]
+WantedBy=multi-user.target

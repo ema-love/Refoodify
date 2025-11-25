@@ -1,0 +1,128 @@
+---
+- name: Deploy Refoodify to web servers
+  hosts: webservers
+  become: yes
+  vars:
+    app_dir: /opt/refoodify
+    repo_url: https://github.com/ema-love/Refoodify.git
+    node_setup_script: https://deb.nodesource.com/setup_18.x
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install dependencies (git, curl)
+      apt:
+        name:
+          - git
+          - curl
+        state: present
+
+    - name: Configure NodeSource and install nodejs
+      become: yes
+      shell: curl -fsSL {{ node_setup_script }} | bash - && apt-get install -y nodejs
+      args:
+        warn: false
+
+    - name: Ensure application directory exists
+      file:
+        path: "{{ app_dir }}"
+        state: directory
+        owner: ubuntu
+        group: ubuntu
+        mode: '0755'
+
+    - name: Clone or update repository
+      git:
+        repo: "{{ repo_url }}"
+        dest: "{{ app_dir }}"
+        version: main
+        force: yes
+        update: yes
+
+    - name: Install npm dependencies
+      npm:
+        path: "{{ app_dir }}"
+        production: yes
+      environment:
+        NODE_ENV: production
+
+    - name: Create systemd service file for refoodify
+      template:
+        src: refoodify.service.j2
+        dest: /etc/systemd/system/refoodify.service
+        owner: root
+        group: root
+        mode: '0644'
+      notify:
+        - daemon-reload
+        - restart refoodify
+
+    - name: Ensure app dir owner is ubuntu
+      file:
+        path: "{{ app_dir }}"
+        owner: ubuntu
+        group: ubuntu
+        recurse: yes
+
+  handlers:
+    - name: daemon-reload
+      systemd:
+        daemon_reload: yes
+
+    - name: restart refoodify
+      systemd:
+        name: refoodify
+        state: restarted
+        enabled: yes
+
+- name: Configure nginx load balancer on lb
+  hosts: lb
+  become: yes
+  vars:
+    lb_conf_dest: /etc/nginx/sites-available/refoodify-lb
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Create lb nginx configuration from template
+      template:
+        src: refoodify-lb.conf.j2
+        dest: "{{ lb_conf_dest }}"
+        owner: root
+        group: root
+        mode: '0644'
+      notify:
+        - test nginx
+        - restart nginx
+
+    - name: Ensure site enabled
+      file:
+        src: "{{ lb_conf_dest }}"
+        dest: /etc/nginx/sites-enabled/refoodify-lb
+        state: link
+        force: yes
+
+    - name: Remove default site link if present
+      file:
+        path: /etc/nginx/sites-enabled/default
+        state: absent
+
+  handlers:
+    - name: test nginx
+      become: yes
+      command: nginx -t
+      ignore_errors: no
+
+    - name: restart nginx
+      systemd:
+        name: nginx
+        state: restarted
+        enabled: yes
