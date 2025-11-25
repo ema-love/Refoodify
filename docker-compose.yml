@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  web01:
+    build: .
+    container_name: refoodify_web01
+    environment:
+      - PORT=3000
+    expose:
+      - "3000"
+    networks:
+      - refoodnet
+
+  web02:
+    build: .
+    container_name: refoodify_web02
+    environment:
+      - PORT=3000
+    expose:
+      - "3000"
+    networks:
+      - refoodnet
+
+  lb:
+    image: nginx:alpine
+    container_name: refoodify_lb
+    ports:
+      - "8080:80"    # Expose LB on host port 8080 for local testing
+    volumes:
+      - ./lb/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - web01
+      - web02
+    networks:
+      - refoodnet
+
+networks:
+  refoodnet:
+    driver: bridge
