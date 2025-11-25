@@ -142,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     startSequence();
   }
-});
   var AUTH_KEY = 'refoodify_auth_v1';
   function isAuthed(){ try{ return JSON.parse(localStorage.getItem(AUTH_KEY) || 'false'); }catch(e){ return false; } }
   function setAuthed(v){ localStorage.setItem(AUTH_KEY, JSON.stringify(Boolean(v))); }
@@ -166,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function(){
         ev.preventDefault();
         setAuthed(true);
         // Redirect to home and ensure header will show profile
-        window.location.replace('index.html');
+        window.location.href = 'index.html';
       });
     }
   }
@@ -180,17 +179,18 @@ document.addEventListener('DOMContentLoaded', function(){
         ev.preventDefault();
         // Basic client-side validation could be extended here
         setAuthed(true);
-        window.location.replace('index.html');
+        window.location.href = 'index.html';
       });
     }
   }
 
   // Social sign-in buttons (simulate auth for demo)
   document.querySelectorAll('.social-btn').forEach(function(sb){
-    sb.addEventListener('click', function(){
+    sb.addEventListener('click', function(ev){
+      ev.preventDefault();
       // In a real app this would start OAuth flow
       setAuthed(true);
-      window.location.replace('index.html');
+      window.location.href = 'index.html';
     });
   });
 
@@ -492,12 +492,12 @@ document.addEventListener('DOMContentLoaded', function(){
         setAuthed(true);
         // Respect users who prefer reduced motion
         if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-          window.location.replace('index.html');
+          window.location.href = 'index.html';
           return;
         }
         // Play a short confetti burst, then redirect so user sees the celebration
         try{ launchConfetti({count: 80, spread: 60, duration: 900}); }catch(e){}
-        setTimeout(function(){ window.location.replace('index.html'); }, 900);
+        setTimeout(function(){ window.location.href = 'index.html'; }, 900);
       });
     }
   }
@@ -509,11 +509,11 @@ document.addEventListener('DOMContentLoaded', function(){
         ev.preventDefault();
         setAuthed(true);
         if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-          window.location.replace('index.html');
+          window.location.href = 'index.html';
           return;
         }
         try{ launchConfetti({count: 60, spread: 50, duration: 800}); }catch(e){}
-        setTimeout(function(){ window.location.replace('index.html'); }, 800);
+        setTimeout(function(){ window.location.href = 'index.html'; }, 800);
       });
     }
   }
