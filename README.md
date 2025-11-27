@@ -123,6 +123,9 @@ Refoodify addresses the real-world problem of food waste, providing practical to
 - Load balancing: Configured Nginx for round-robin
 - Secure key management: Used environment variables and `.gitignore`
 
+## website link
+http://lb01-refoodify-412540844.eu-north-1.elb.amazonaws.com/
+
 ## Credits
 - Spoonacular API team
 - Google Maps API team
