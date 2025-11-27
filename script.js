@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function(){
   function isAuthed(){ try{ return JSON.parse(localStorage.getItem(AUTH_KEY) || 'false'); }catch(e){ return false; } }
   function setAuthed(v){ localStorage.setItem(AUTH_KEY, JSON.stringify(Boolean(v))); }
   function clearAuth(){ localStorage.removeItem(AUTH_KEY); }
-  document.querySelectorAll('a[href="login.html"]').forEach(function(a){ a.addEventListener('click', function(){ clearAuth(); }); });
+  document.querySelectorAll('.profile-menu a[href="login.html"]').forEach(function(a){ a.addEventListener('click', function(){ clearAuth(); }); });
   var toggles = document.querySelectorAll('.toggle-password');
   toggles.forEach(function(btn){
     btn.addEventListener('click', function(){
@@ -164,21 +164,108 @@ document.addEventListener('DOMContentLoaded', function(){
       loginForm.addEventListener('submit', function(ev){
         ev.preventDefault();
         setAuthed(true);
+        try{
+          var email = (document.querySelector('#login-email').value || '').trim();
+          var name = email ? (email.split('@')[0] || 'User') : 'User';
+          var user = { name:name, email:email, location:'', role:'', bio:'', interests:'', preferences:{ food:'', notifications:{ email:true, push:false, digest:false }, privacy:{ showImpact:true, hideActivity:false } } };
+          localStorage.setItem('refoodify_user_v1', JSON.stringify(user));
+        }catch(e){}
         // Redirect to home and ensure header will show profile
         window.location.href = 'index.html';
       });
     }
   }
 
-  // Register form handling: set auth and redirect to home
+  function setupHeaderAuthUI(){
+    var headerAuth = document.querySelector('.header-auth');
+    if(!headerAuth) return;
+    if(isAuthed()){
+      headerAuth.innerHTML = ''+
+        '<a href="saved.html" aria-label="Saved" class="icon-btn">'+
+        '  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">'+
+        '    <path d="M6 4h12v16l-6-4-6 4V4z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>'+
+        '  </svg>'+
+        '</a>'+
+        '<div class="profile">'+
+        '  <button class="profile-btn" aria-haspopup="true" aria-expanded="false">'+
+        '    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">'+
+        '      <circle cx="12" cy="8" r="4" stroke-width="2"></circle>'+
+        '      <path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke-width="2" stroke-linecap="round"></path>'+
+        '    </svg>'+
+        '  </button>'+
+        '  <div class="profile-menu">'+
+        '    <a href="profile.html">Profile</a>'+
+        '    <a href="login.html">Logout</a>'+
+        '  </div>'+
+        '</div>';
+      var pbtn = headerAuth.querySelector('.profile-btn');
+      if(pbtn){
+        pbtn.addEventListener('click', function(){
+          var profile = pbtn.closest('.profile');
+          var isOpen = profile.classList.toggle('open');
+          pbtn.setAttribute('aria-expanded', String(isOpen));
+        });
+      }
+    } else {
+      headerAuth.innerHTML = ''+
+        '<a href="register.html" class="btn btn-outline">Sign Up</a>'+
+        '<a href="login.html" class="btn btn-primary">Login</a>';
+    }
+  }
+
+  function setupCTALinks(){
+    var getStarted = document.querySelector('.hero-buttons a.btn.btn-primary');
+    var startJourney = document.querySelector('.btn.btn-cta');
+    var aboutStart = document.querySelector('.join-cta .btn.btn-primary');
+    var target = isAuthed() ? 'analyzer.html' : 'login.html';
+    if(getStarted){ getStarted.setAttribute('href', target); }
+    if(startJourney){ startJourney.setAttribute('href', target); }
+    if(aboutStart){ aboutStart.setAttribute('href', isAuthed() ? 'analyzer.html' : 'register.html'); }
+  }
+
+  setupHeaderAuthUI();
+  setupCTALinks();
+
   var regEmail = document.querySelector('#reg-email');
   if(regEmail){
     var regForm = regEmail.closest('form');
+    var regPw = document.querySelector('#reg-password');
+    var regName = document.querySelector('#reg-name');
+    var regConfirm = document.querySelector('#reg-confirm');
+    var pwBar = document.querySelector('#pwStrength .pw-bar');
+    function pwScore(p){
+      var s = 0;
+      if(p.length >= 8) s++;
+      if(/[A-Z]/.test(p)) s++;
+      if(/[a-z]/.test(p)) s++;
+      if(/[0-9]/.test(p)) s++;
+      if(/[^A-Za-z0-9]/.test(p)) s++;
+      return Math.min(s, 4);
+    }
+    function updatePwBar(){
+      var p = regPw ? regPw.value : '';
+      var sc = pwScore(p);
+      var pct = sc===0?0:sc===1?25:sc===2?50:sc===3?75:100;
+      if(pwBar){ pwBar.style.width = pct + '%'; pwBar.style.background = sc < 2 ? '#e25858' : sc < 3 ? '#f0ad4e' : '#8DA966'; }
+    }
+    function checkMatch(){
+      if(!regPw || !regConfirm) return true;
+      var ok = regPw.value === regConfirm.value;
+      regConfirm.setCustomValidity(ok ? '' : 'Passwords do not match');
+      return ok;
+    }
+    if(regPw){ regPw.addEventListener('input', function(){ updatePwBar(); checkMatch(); }); }
+    if(regConfirm){ regConfirm.addEventListener('input', function(){ checkMatch(); }); }
+    updatePwBar();
     if(regForm){
       regForm.addEventListener('submit', function(ev){
         ev.preventDefault();
-        // Basic client-side validation could be extended here
+        if(!checkMatch()){ regConfirm.reportValidity(); return; }
         setAuthed(true);
+        try{
+          var user = { name:(regName && regName.value)||'User', email:(regEmail && regEmail.value)||'', location:'', role:'', bio:'', interests:'', preferences:{ food:'', notifications:{ email:true, push:false, digest:false }, privacy:{ showImpact:true, hideActivity:false } } };
+          localStorage.setItem('refoodify_user_v1', JSON.stringify(user));
+        }catch(e){}
         window.location.href = 'index.html';
       });
     }
@@ -190,6 +277,11 @@ document.addEventListener('DOMContentLoaded', function(){
       ev.preventDefault();
       // In a real app this would start OAuth flow
       setAuthed(true);
+      try{
+        var provider = sb.classList.contains('google') ? 'Google' : 'Facebook';
+        var user = { name:provider+' User', email:'', location:'', role:'', bio:'', interests:'', preferences:{ food:'', notifications:{ email:true, push:false, digest:false }, privacy:{ showImpact:true, hideActivity:false } } };
+        localStorage.setItem('refoodify_user_v1', JSON.stringify(user));
+      }catch(e){}
       window.location.href = 'index.html';
     });
   });
@@ -579,17 +671,95 @@ document.addEventListener('DOMContentLoaded', function(){
     var savedSort = document.getElementById('savedSort');
     var savedEmpty = document.getElementById('savedEmpty');
     if(!isAuthed()){ savedGrid.innerHTML=''; savedEmpty.style.display='block'; var t = savedEmpty.querySelector('.empty-title'); if(t){ t.textContent = 'Login to view saved items'; } var b = savedEmpty.querySelector('.btn'); if(b){ b.setAttribute('href','login.html'); } return; }
-    var items = [
-      { id:'s1', cat:'Meals', title:'Veggie Bowl', desc:'Spinach, rice, beans', icon:'🥗', date: 6, pop: 20 },
-      { id:'s2', cat:'Recipes', title:'Tomato Pasta', desc:'Tomato, pasta', icon:'🍝', date: 3, pop: 50 },
-      { id:'s3', cat:'Donations', title:'Green Center', desc:'Downtown food bank', icon:'🏪', date: 10, pop: 5 }
-    ];
-    function renderSaved(){ var cat = savedCat.value || ''; var sort = savedSort.value || 'date'; var list = items.filter(function(i){ return !cat || i.cat===cat; }); list.sort(function(a,b){ return sort==='date' ? b.date - a.date : b.pop - a.pop; }); savedGrid.innerHTML = list.map(function(i){ return '<div class="item-card"><div class="item-thumb">'+i.icon+'</div><div class="item-title">'+i.title+'</div><div class="item-desc">'+i.desc+'</div><div class="item-actions"><a class="btn-view" href="#">View Details</a><button class="btn-remove" data-id="'+i.id+'">Remove</button></div></div>'; }).join(''); savedEmpty.style.display = list.length ? 'none' : 'block'; wireRemove(); }
-    function wireRemove(){ var btns = savedGrid.querySelectorAll('.btn-remove'); btns.forEach(function(b){ b.onclick = function(){ var id = b.getAttribute('data-id'); items = items.filter(function(i){ return i.id!==id; }); renderSaved(); }; }); }
+    var TIPS_KEY = 'refoodify_saved_tips_v1';
+    function loadSavedTips(){ try{ return JSON.parse(localStorage.getItem(TIPS_KEY) || '[]'); }catch(e){ return []; } }
+    function tipData(){ return [
+      { id:'t1', cat:'Storage Tips', icon:'jar', text:'Store carrots submerged in water in the fridge to keep them crisp for weeks.' },
+      { id:'t2', cat:'Zero-Waste Hacks', icon:'leaf', text:'Use vegetable scraps to make a rich homemade stock.' },
+      { id:'t3', cat:'Near-Expiry Tips', icon:'basket', text:'Turn near-expiry yogurt into smoothies or frozen pops.' },
+      { id:'t4', cat:'Ingredient-Specific Tips', icon:'fridge', text:'Keep herbs fresh by storing them upright in a jar of water like a bouquet.' },
+      { id:'t5', cat:'Beginner Tips', icon:'leaf', text:'Plan meals for the week and shop with a list to avoid waste.' },
+      { id:'t6', cat:'Budget-Friendly Tips', icon:'basket', text:'Freeze leftover cooked rice in portions to reduce waste and save time.' },
+      { id:'t7', cat:'Storage Tips', icon:'fridge', text:'Keep bread in a cool, dry place; freeze slices to extend shelf life.' },
+      { id:'t8', cat:'Zero-Waste Hacks', icon:'leaf', text:'Regrow green onions by placing roots in a jar of water.' },
+      { id:'t9', cat:'Near-Expiry Tips', icon:'jar', text:'Make a quick pickle with near-expiry cucumbers, vinegar, salt, and sugar.' }
+    ]; }
+    var tipIconEmoji = { jar:'🫙', leaf:'🌿', fridge:'🧊', basket:'🧺' };
+    function buildItems(){
+      var savedTipIds = loadSavedTips();
+      var tips = tipData();
+      var map = {}; tips.forEach(function(t){ map[t.id]=t; });
+      var list = savedTipIds.map(function(id, idx){ var t = map[id]; if(!t) return null; return { id:id, cat:'Tips', title:t.cat, desc:t.text, icon: tipIconEmoji[t.icon] || '💡', date: (Date.now()/1000|0) - idx, pop: 0 }; }).filter(Boolean);
+      return list;
+    }
+    var items = buildItems();
+    function renderSaved(){ var cat = savedCat.value || ''; var sort = savedSort.value || 'date'; items = buildItems(); var list = items.filter(function(i){ return !cat || i.cat===cat; }); list.sort(function(a,b){ return sort==='date' ? b.date - a.date : b.pop - a.pop; }); savedGrid.innerHTML = list.map(function(i){ return '<div class="item-card"><div class="item-thumb">'+i.icon+'</div><div class="item-title">'+i.title+'</div><div class="item-desc">'+i.desc+'</div><div class="item-actions"><button class="btn-remove" data-id="'+i.id+'">Remove</button></div></div>'; }).join(''); savedEmpty.style.display = list.length ? 'none' : 'block'; wireRemove(); }
+    function wireRemove(){ var btns = savedGrid.querySelectorAll('.btn-remove'); btns.forEach(function(b){ b.onclick = function(){ var id = b.getAttribute('data-id'); var ids = loadSavedTips(); var i = ids.indexOf(id); if(i!==-1){ ids.splice(i,1); localStorage.setItem(TIPS_KEY, JSON.stringify(ids)); } renderSaved(); }; }); }
     if(savedCat){ savedCat.addEventListener('change', renderSaved); }
     if(savedSort){ savedSort.addEventListener('change', renderSaved); }
     renderSaved();
   }
+
+  // Profile: show dynamic saved count
+  (function(){
+    var el = document.getElementById('savedCountText');
+    if(!el) return;
+    try{
+      var tips = JSON.parse(localStorage.getItem('refoodify_saved_tips_v1') || '[]');
+      var count = tips.length;
+      el.textContent = (count===1? '1 saved item' : count + ' saved items');
+    }catch(e){ /* ignore */ }
+  })();
+
+  (function(){
+    var nameEl = document.getElementById('profileName');
+    var emailEl = document.getElementById('profileEmail');
+    var avatarEl = document.getElementById('avatarInitials');
+    var avatarImg = document.getElementById('profileAvatarImg');
+    var bioEl = document.getElementById('profileBio');
+    var chipLoc = document.getElementById('chipLocation');
+    var chipInt = document.getElementById('chipInterests');
+    var chipRole = document.getElementById('chipRole');
+
+    var fName = document.getElementById('prof-name');
+    var fEmail = document.getElementById('prof-email');
+    var fLoc = document.getElementById('prof-location');
+    var fFood = document.getElementById('prof-food');
+    var cbEmail = document.getElementById('pref-email');
+    var cbPush = document.getElementById('pref-push');
+    var cbDigest = document.getElementById('pref-digest');
+    var cbImpact = document.getElementById('priv-impact');
+    var cbHide = document.getElementById('priv-hide');
+    var saveBtn = document.getElementById('saveProfileBtn');
+    var editBioBtn = document.getElementById('editBioBtn');
+    var avatarFileInput = document.getElementById('avatarFileInput');
+    var changePhotoBtn = document.getElementById('changePhotoBtn');
+    var grid = document.querySelector('.profile-sections-grid');
+    var gridAboutSummary = document.getElementById('gridAboutSummary');
+    var gridPrefSummary = document.getElementById('gridPrefSummary');
+    var gridSecSummary = document.getElementById('gridSecSummary');
+
+    function loadUser(){ try{ return JSON.parse(localStorage.getItem('refoodify_user_v1')||'{}'); }catch(e){ return {}; } }
+    function saveUser(u){ localStorage.setItem('refoodify_user_v1', JSON.stringify(u||{})); }
+    function initials(name){ var n=(name||'').trim(); if(!n) return 'U'; var parts=n.split(/\s+/); var a=parts[0]?parts[0][0]:''; var b=parts[1]?parts[1][0]:''; return (a+b||a||'U').toUpperCase(); }
+    function render(){ var u = loadUser(); var name = u.name||'Your Name'; var email = u.email||'you@example.com'; var loc = u.location||''; var role = u.role||''; var bio = u.bio||'Tell us about yourself and your mission.'; var interests = u.interests||''; var prefs = u.preferences||{}; var nf = (prefs.food||''); var notif=prefs.notifications||{}; var priv=prefs.privacy||{}; if(nameEl) nameEl.textContent = name; if(emailEl) emailEl.textContent = email; if(avatarImg && u.photo){ avatarImg.src = u.photo; avatarImg.style.display = 'inline-flex'; if(avatarEl) avatarEl.style.display = 'none'; } else { if(avatarImg) avatarImg.style.display = 'none'; if(avatarEl){ avatarEl.style.display = 'inline-flex'; avatarEl.textContent = initials(name); } } if(bioEl) bioEl.textContent = bio; if(chipLoc) chipLoc.innerHTML = "<i class='bx bx-map' style='font-size:1.1rem;'></i> " + (loc||'Location'); if(chipInt) chipInt.innerHTML = "<i class='bx bx-heart' style='font-size:1.1rem;'></i> " + (interests||'Interests'); if(chipRole) chipRole.innerHTML = "<i class='bx bx-briefcase' style='font-size:1.1rem;'></i> " + (role||'Role'); if(fName) fName.value = name; if(fEmail) fEmail.value = email; if(fLoc) fLoc.value = loc; if(fFood) fFood.value = nf; if(cbEmail) cbEmail.checked = Boolean(notif.email); if(cbPush) cbPush.checked = Boolean(notif.push); if(cbDigest) cbDigest.checked = Boolean(notif.digest); if(cbImpact) cbImpact.checked = priv.showImpact!==false; if(cbHide) cbHide.checked = Boolean(priv.hideActivity); var sec2fa = document.getElementById('pref-2fa'); var twofa = sec2fa ? sec2fa.checked : false; if(gridAboutSummary) gridAboutSummary.textContent = (name||'Your Name') + (loc? ' • ' + loc : ''); var notifCount = (cbEmail&&cbEmail.checked?1:0) + (cbPush&&cbPush.checked?1:0) + (cbDigest&&cbDigest.checked?1:0); var notifText = notifCount===0 ? 'No notifications' : (notifCount===1 ? '1 notification' : notifCount + ' notifications'); var foodText = nf ? nf : 'No food prefs'; if(gridPrefSummary) gridPrefSummary.textContent = foodText + ' • ' + notifText; if(gridSecSummary) gridSecSummary.textContent = (twofa ? '2FA On' : '2FA Off'); }
+    function collect(){ var u = loadUser(); u.name = fName?fName.value.trim():u.name; u.email = fEmail?fEmail.value.trim():u.email; u.location = fLoc?fLoc.value.trim():u.location; u.preferences = u.preferences||{}; u.preferences.food = fFood?fFood.value.trim():u.preferences.food; u.preferences.notifications = { email: cbEmail?cbEmail.checked:false, push: cbPush?cbPush.checked:false, digest: cbDigest?cbDigest.checked:false }; u.preferences.privacy = { showImpact: cbImpact?cbImpact.checked:true, hideActivity: cbHide?cbHide.checked:false }; return u; }
+    if(saveBtn){ saveBtn.addEventListener('click', function(){ var u = collect(); saveUser(u); render(); }); }
+    if(editBioBtn && bioEl){ editBioBtn.addEventListener('click', function(){ var v = prompt('Update your bio:', bioEl.textContent||''); if(v!=null){ var u = loadUser(); u.bio = v.trim(); saveUser(u); render(); } }); }
+    if(changePhotoBtn && avatarFileInput){ changePhotoBtn.addEventListener('click', function(){ avatarFileInput.click(); }); }
+    if(avatarFileInput){ avatarFileInput.addEventListener('change', function(){ var f = avatarFileInput.files && avatarFileInput.files[0]; if(!f) return; var reader = new FileReader(); reader.onload = function(){ var u = loadUser(); u.photo = String(reader.result||''); saveUser(u); render(); }; reader.readAsDataURL(f); }); }
+    if(grid){ grid.addEventListener('click', function(ev){ var card = ev.target.closest('.grid-card'); if(!card) return; var sel = card.getAttribute('data-target'); var el = sel ? document.querySelector(sel) : null; if(el){ try{ el.scrollIntoView({behavior:'smooth', block:'start'}); }catch(e){ window.location.hash = sel; } } }); }
+    render();
+  })();
+
+  (function(){
+    var img = document.getElementById('founderPhoto');
+    if(!img) return;
+    try{
+      var u = JSON.parse(localStorage.getItem('refoodify_user_v1')||'{}');
+      if(u && u.photo){ img.src = u.photo; }
+    }catch(e){}
+  })();
 
   var tipsPage = document.querySelector('.tips-page');
   if(tipsPage){
@@ -748,19 +918,23 @@ document.addEventListener('DOMContentLoaded', function(){
     } else { start(); }
   })();
 
-  // Lightweight confetti burst (canvas) - used on registration/signup
+  // Lightweight confetti burst (canvas)
   function launchConfetti(opts){
     opts = opts || {};
     if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var count = typeof opts.count === 'number' ? opts.count : 80;
+    var count = typeof opts.count === 'number' ? opts.count : 120;
     var duration = typeof opts.duration === 'number' ? opts.duration : 900;
-    var spread = typeof opts.spread === 'number' ? opts.spread : 60;
+    var spread = typeof opts.spread === 'number' ? opts.spread : 80;
+    var fullScreen = Boolean(opts.fullScreen);
+    var sizeMin = typeof opts.sizeMin === 'number' ? Math.max(2, opts.sizeMin) : 3;
+    var sizeMax = typeof opts.sizeMax === 'number' ? Math.max(sizeMin, opts.sizeMax) : 8;
 
     // Scale count by viewport width to preserve performance on small devices
     try{
       var vw = window.innerWidth || 800;
       var factor = Math.max(0.25, Math.min(1, vw / 1200));
-      count = Math.max(6, Math.round(count * factor));
+      var popMul = fullScreen ? 2.4 : 1.2;
+      count = Math.max(12, Math.round(count * factor * popMul));
     }catch(e){}
 
     var colors = opts.colors || ['#ff4d6d','#ffd166','#06d6a0','#118ab2','#9b5de5','#f15bb5'];
@@ -783,14 +957,16 @@ document.addEventListener('DOMContentLoaded', function(){
     function rand(min, max){ return Math.random()*(max-min)+min; }
     var cx = window.innerWidth/2, cy = window.innerHeight*0.28;
     for(var i=0;i<count;i++){
-      var angle = (Math.PI/180) * rand(90 - spread/2, 90 + spread/2);
-      var speed = rand(2,8);
+      var originX = fullScreen ? rand(0, window.innerWidth) : cx;
+      var originY = fullScreen ? rand(0, window.innerHeight) : cy;
+      var angle = fullScreen ? rand(0, Math.PI*2) : (Math.PI/180) * rand(90 - spread/2, 90 + spread/2);
+      var speed = fullScreen ? rand(2,9) : rand(3,10);
       particles.push({
-        x: cx,
-        y: cy,
+        x: originX,
+        y: originY,
         vx: Math.cos(angle)*speed * (Math.random()>0.5?1:-1),
         vy: -Math.abs(Math.sin(angle)*speed),
-        r: rand(6,12),
+        r: rand(sizeMin, sizeMax),
         rot: rand(0,Math.PI*2),
         vr: rand(-0.2,0.2),
         color: colors[Math.floor(rand(0,colors.length))],
@@ -807,11 +983,11 @@ document.addEventListener('DOMContentLoaded', function(){
       particles.forEach(function(p){
         var dt = Math.min(16, 16);
         p.age = t;
-        p.vy += 0.15; // gravity
+        p.vy += 0.18;
         p.x += p.vx;
         p.y += p.vy;
-        p.vx *= 0.995;
-        p.vy *= 0.998;
+        p.vx *= 0.994;
+        p.vy *= 0.996;
         p.rot += p.vr;
         var alpha = 1 - (p.age / p.life);
         if(alpha < 0) alpha = 0;
@@ -820,7 +996,7 @@ document.addEventListener('DOMContentLoaded', function(){
         ctx.rotate(p.rot);
         ctx.globalAlpha = alpha;
         ctx.fillStyle = p.color;
-        ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*0.6);
+        ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*0.7);
         ctx.restore();
       });
       if(t < duration + 400){ raf = requestAnimationFrame(draw); }
@@ -836,4 +1012,62 @@ document.addEventListener('DOMContentLoaded', function(){
     setTimeout(cleanup, duration + 1200);
     return { stop: cleanup };
   }
+
+  // Home page confetti flood
+  (function(){
+    var home = document.querySelector('.hero-section');
+    if(!home) return;
+    try{
+      setTimeout(function(){ launchConfetti({ count: 1200, duration: 2200, spread: 360, fullScreen: true, sizeMin: 3, sizeMax: 7, colors:['#ff4d6d','#ffd166','#06d6a0','#118ab2','#9b5de5','#f15bb5','#2dd4bf','#f59e0b'] }); }, 600);
+    }catch(e){}
+  })();
+  function ensureVisibleImages(){
+    var rules = [
+      {re:/badge/i, url:'https://img.icons8.com/fluency/96/trophy.png'},
+      {re:/tip|leaf-icon/i, url:'https://img.icons8.com/fluency/96/leaf.png'},
+      {re:/clipboard/i, url:'https://img.icons8.com/fluency/96/clipboard.png'},
+      {re:/pie|chart/i, url:'https://img.icons8.com/fluency/96/pie-chart.png'},
+      {re:/bookmark/i, url:'https://img.icons8.com/fluency/96/bookmark--v1.png'},
+      {re:/story.*thumb|story-submit/i, url:'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=300&fit=crop'},
+      {re:/community\d/i, url:'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=120&h=120&fit=crop'},
+      {re:/report-illustration/i, url:'https://img.icons8.com/fluency/96/combo-chart.png'},
+      {re:/veggie|vegetable/i, url:'https://images.unsplash.com/photo-1512621776951-8f4b69c1f729?w=160&h=160&fit=crop'},
+      {re:/rice/i, url:'https://img.icons8.com/fluency/96/rice-bowl.png'},
+      {re:/safety/i, url:'https://img.icons8.com/fluency/96/health-checkup.png'},
+      {re:/video\d/i, url:'https://img.icons8.com/fluency/96/video.png'},
+      {re:/pdf/i, url:'https://img.icons8.com/fluency/48/pdf.png'},
+      {re:/quiz/i, url:'https://img.icons8.com/fluency/96/quiz.png'},
+      {re:/profile\d/i, url:'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=120&h=120&fit=crop'},
+      {re:/restaurant/i, url:'https://img.icons8.com/fluency/96/restaurant.png'},
+      {re:/hotel/i, url:'https://img.icons8.com/fluency/96/hotel.png'},
+      {re:/bakery/i, url:'https://img.icons8.com/fluency/96/bread.png'},
+      {re:/household|home/i, url:'https://img.icons8.com/fluency/96/home.png'},
+      {re:/food-icon|ingredients/i, url:'https://img.icons8.com/fluency/96/ingredients-list.png'},
+      {re:/category/i, url:'https://img.icons8.com/fluency/96/tags.png'},
+      {re:/quantity|scale/i, url:'https://img.icons8.com/fluency/96/scale.png'},
+      {re:/expiry|calendar/i, url:'https://img.icons8.com/fluency/96/calendar.png'},
+      {re:/image-icon/i, url:'https://img.icons8.com/fluency/96/image.png'},
+      {re:/storage/i, url:'https://img.icons8.com/fluency/96/warehouse.png'},
+      {re:/thermometer|temperature/i, url:'https://img.icons8.com/fluency/96/temperature.png'},
+      {re:/freshness/i, url:'https://img.icons8.com/fluency/96/leaf.png'},
+      {re:/hygiene|soap/i, url:'https://img.icons8.com/fluency/96/soap.png'},
+      {re:/time/i, url:'https://img.icons8.com/fluency/96/time.png'},
+      {re:/truck/i, url:'https://img.icons8.com/fluency/96/delivery.png'},
+      {re:/pin|marker/i, url:'https://img.icons8.com/fluency/96/marker.png'},
+      {re:/map-preview|map\.png/i, url:'https://img.icons8.com/fluency/512/map.png'},
+      {re:/guidelines/i, url:'https://img.icons8.com/fluency/96/rules.png'},
+      {re:/policy/i, url:'https://img.icons8.com/fluency/96/privacy-policy.png'},
+      {re:/partner/i, url:'https://img.icons8.com/fluency/96/handshake.png'}
+    ];
+    function pick(src, alt){
+      for(var i=0;i<rules.length;i++){ if(rules[i].re.test(src) || rules[i].re.test(alt||'')) return rules[i].url; }
+      return 'https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=400&h=300&fit=crop';
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('img'), function(img){
+      function apply(){ var fb = pick(img.src||'', img.alt||''); if(fb){ img.src = fb; img.loading = 'lazy'; if(!img.style.objectFit) img.style.objectFit = 'cover'; img.style.visibility = 'visible'; } }
+      img.addEventListener('error', apply);
+      if(img.complete && (img.naturalWidth===0 || img.naturalHeight===0)) apply();
+    });
+  }
+  ensureVisibleImages();
 });

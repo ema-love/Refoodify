@@ -33,12 +33,40 @@
     </div>
   </header>
 
+  <section class="profile-header-block" style="max-width:900px; margin:1rem auto; background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.5rem; display:flex; align-items:center; gap:1rem;">
+    <img id="profileAvatarImg" alt="Profile Photo" class="avatar avatar-large" style="display:none; object-fit:cover;">
+    <div id="avatarInitials" class="avatar avatar-large">U</div>
+    <div>
+      <h2 id="profileName" style="color:#557C22; font-size:1.6rem; font-weight:700; margin:0;">Your Name</h2>
+      <div id="profileEmail" style="color:#6A8A4A; font-size:1.05rem; font-weight:600;">you@example.com</div>
+    </div>
+    <div style="margin-left:auto; display:flex; align-items:center; gap:0.6rem;">
+      <input id="avatarFileInput" type="file" accept="image/*" style="display:none;">
+      <button id="changePhotoBtn" style="background:#8DA966; color:#fff; border-radius:14px; padding:0.5rem 1rem; font-size:0.95rem; font-weight:600;">Change Photo</button>
+    </div>
+  </section>
+
+  <section class="profile-sections-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; max-width:900px; margin:1rem auto;">
+    <button class="grid-card" data-target="#aboutMe" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1rem; display:flex; flex-direction:column; align-items:flex-start; gap:0.4rem; border:1.5px solid #BBD29B; cursor:pointer;">
+      <div style="color:#557C22; font-size:1.08rem; font-weight:700;">About</div>
+      <div id="gridAboutSummary" style="color:#6A8A4A; font-size:0.98rem;">Summary</div>
+    </button>
+    <button class="grid-card" data-target="#accountPref" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1rem; display:flex; flex-direction:column; align-items:flex-start; gap:0.4rem; border:1.5px solid #BBD29B; cursor:pointer;">
+      <div style="color:#557C22; font-size:1.08rem; font-weight:700;">Account & Preferences</div>
+      <div id="gridPrefSummary" style="color:#6A8A4A; font-size:0.98rem;">Summary</div>
+    </button>
+    <button class="grid-card" data-target="#securitySection" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1rem; display:flex; flex-direction:column; align-items:flex-start; gap:0.4rem; border:1.5px solid #BBD29B; cursor:pointer;">
+      <div style="color:#557C22; font-size:1.08rem; font-weight:700;">Security</div>
+      <div id="gridSecSummary" style="color:#6A8A4A; font-size:0.98rem;">Summary</div>
+    </button>
+  </section>
+
   <!-- Profile Summary Cards Section -->
   <section class="profile-summary-cards" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2rem; max-width:1100px; margin:2rem auto;">
     <div class="summary-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.5rem; display:flex; flex-direction:column; align-items:center;">
       <i class='bx bx-bookmark' style='color:#557C22; font-size:2rem; margin-bottom:0.7rem;'></i>
       <div style="color:#557C22; font-size:1.08rem; font-weight:600; margin-bottom:0.3rem;">Saved Items</div>
-      <div style="color:#6A8A4A; font-size:0.98rem;">12 saved recipes</div>
+      <div id="savedCountText" style="color:#6A8A4A; font-size:0.98rem;">0 saved items</div>
     </div>
     <div class="summary-card" style="background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:1.5rem; display:flex; flex-direction:column; align-items:center;">
       <i class='bx bx-history' style='color:#557C22; font-size:2rem; margin-bottom:0.7rem;'></i>
@@ -68,15 +96,15 @@
   </section>
 
   <!-- About Me Section -->
-  <section class="about-me-block" style="max-width:700px; margin:2rem auto; background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:2rem;">
+  <section id="aboutMe" class="about-me-block" style="max-width:700px; margin:2rem auto; background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:2rem;">
     <h3 style="color:#557C22; font-size:1.18rem; font-weight:600; margin-bottom:0.7rem;">About Me</h3>
-    <p style="color:#333; font-size:1.05rem; margin-bottom:1rem;">Passionate about cooking, sustainability, and helping my community reduce food waste.</p>
+    <p id="profileBio" style="color:#333; font-size:1.05rem; margin-bottom:1rem;">Tell us about yourself and your mission.</p>
     <div style="display:flex; gap:1.2rem; margin-bottom:1rem;">
-      <span style="background:#BBD29B; color:#557C22; border-radius:12px; padding:0.3rem 1rem; font-size:0.95rem; display:flex; align-items:center; gap:0.5rem;"><i class='bx bx-map' style='font-size:1.1rem;'></i> Kigali, Rwanda</span>
-      <span style="background:#BBD29B; color:#557C22; border-radius:12px; padding:0.3rem 1rem; font-size:0.95rem; display:flex; align-items:center; gap:0.5rem;"><i class='bx bx-heart' style='font-size:1.1rem;'></i> Cooking, Sustainability</span>
-      <span style="background:#BBD29B; color:#557C22; border-radius:12px; padding:0.3rem 1rem; font-size:0.95rem; display:flex; align-items:center; gap:0.5rem;"><i class='bx bx-book' style='font-size:1.1rem;'></i> Vegetarian</span>
+      <span id="chipLocation" style="background:#BBD29B; color:#557C22; border-radius:12px; padding:0.3rem 1rem; font-size:0.95rem; display:flex; align-items:center; gap:0.5rem;"><i class='bx bx-map' style='font-size:1.1rem;'></i> Location</span>
+      <span id="chipInterests" style="background:#BBD29B; color:#557C22; border-radius:12px; padding:0.3rem 1rem; font-size:0.95rem; display:flex; align-items:center; gap:0.5rem;"><i class='bx bx-heart' style='font-size:1.1rem;'></i> Interests</span>
+      <span id="chipRole" style="background:#BBD29B; color:#557C22; border-radius:12px; padding:0.3rem 1rem; font-size:0.95rem; display:flex; align-items:center; gap:0.5rem;"><i class='bx bx-briefcase' style='font-size:1.1rem;'></i> Role</span>
     </div>
-    <button style="background:#8DA966; color:#fff; border-radius:14px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:500;">Edit Bio</button>
+    <button id="editBioBtn" style="background:#8DA966; color:#fff; border-radius:14px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:500;">Edit Bio</button>
   </section>
 
   <!-- Activity Overview Section -->
@@ -180,31 +208,36 @@
   </section>
 
   <!-- Account & Preferences Section -->
-  <section class="account-preferences-block" style="max-width:700px; margin:2rem auto; background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:2rem;">
+  <section id="accountPref" class="account-preferences-block" style="max-width:700px; margin:2rem auto; background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:2rem;">
     <h3 style="color:#557C22; font-size:1.18rem; font-weight:600; margin-bottom:0.7rem;">Account & Preferences</h3>
     <div style="margin-bottom:1rem;">
       <div style="color:#6A8A4A; font-size:0.98rem; margin-bottom:0.3rem;">Personal Info</div>
-      <div style="color:#333; font-size:1.05rem;">Jane Doe | jane@example.com</div>
+      <div style="display:flex; gap:0.7rem; flex-wrap:wrap; align-items:center;">
+        <input id="prof-name" type="text" placeholder="Full Name" style="flex:1; padding:0.6rem 0.9rem; border-radius:10px; border:1.5px solid #BBD29B;">
+        <input id="prof-email" type="email" placeholder="Email" style="flex:1; padding:0.6rem 0.9rem; border-radius:10px; border:1.5px solid #BBD29B;">
+        <input id="prof-location" type="text" placeholder="Location" style="flex:1; padding:0.6rem 0.9rem; border-radius:10px; border:1.5px solid #BBD29B;">
+      </div>
     </div>
     <div style="margin-bottom:1rem;">
       <div style="color:#6A8A4A; font-size:0.98rem; margin-bottom:0.3rem;">Notification Settings</div>
-      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input type="checkbox" checked> <span>Email</span></label>
-      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input type="checkbox"> <span>Push</span></label>
-      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input type="checkbox"> <span>Weekly Digest</span></label>
+      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input id="pref-email" type="checkbox"> <span>Email</span></label>
+      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input id="pref-push" type="checkbox"> <span>Push</span></label>
+      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input id="pref-digest" type="checkbox"> <span>Weekly Digest</span></label>
     </div>
     <div style="margin-bottom:1rem;">
       <div style="color:#6A8A4A; font-size:0.98rem; margin-bottom:0.3rem;">Privacy Settings</div>
-      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input type="checkbox"> <span>Show/share impact?</span></label>
-      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input type="checkbox"> <span>Hide activity?</span></label>
+      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input id="priv-impact" type="checkbox"> <span>Show/share impact?</span></label>
+      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input id="priv-hide" type="checkbox"> <span>Hide activity?</span></label>
     </div>
     <div style="margin-bottom:1rem;">
       <div style="color:#6A8A4A; font-size:0.98rem; margin-bottom:0.3rem;">Food Preferences</div>
-      <div style="color:#333; font-size:1.05rem;">Vegetarian, African cuisine</div>
+      <input id="prof-food" type="text" placeholder="e.g., Vegetarian, African cuisine" style="width:100%; padding:0.6rem 0.9rem; border-radius:10px; border:1.5px solid #BBD29B;">
     </div>
+    <button id="saveProfileBtn" style="background:#8DA966; color:#fff; border-radius:14px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:500;">Save Changes</button>
   </section>
 
   <!-- Security Section -->
-  <section class="security-block" style="max-width:700px; margin:2rem auto; background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:2rem;">
+  <section id="securitySection" class="security-block" style="max-width:700px; margin:2rem auto; background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(85,124,34,0.07); padding:2rem;">
     <h3 style="color:#557C22; font-size:1.18rem; font-weight:600; margin-bottom:0.7rem;">Security</h3>
     <div style="margin-bottom:1rem;">
       <label style="display:block; margin-bottom:0.5rem;">Change Password</label>
@@ -213,7 +246,7 @@
       <input type="password" placeholder="Confirm new password" style="width:100%; padding:0.7rem; border-radius:10px; border:1.5px solid #BBD29B;">
     </div>
     <div style="margin-bottom:1rem;">
-      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input type="checkbox"> <span>Two-factor authentication</span></label>
+      <label style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.5rem;"><input id="pref-2fa" type="checkbox"> <span>Two-factor authentication</span></label>
       <label style="display:block; margin-bottom:0.5rem;">Device Sessions</label>
       <div style="color:#333; font-size:1.05rem;">iPhone, MacBook Pro</div>
       <button style="background:#FF6F61; color:#fff; border-radius:14px; padding:0.6rem 1.6rem; font-size:1rem; font-weight:500; margin-top:0.7rem;">Log out all devices</button>
